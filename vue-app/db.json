@@ -1,0 +1,29 @@
+{
+  "vacations": [
+    {
+      "id": 10,
+      "name": "Florida beach getaway",
+      "description": "Soft beach sands, warm sunsets, calm waters"
+    },
+    {
+      "id": 20,
+      "name": "Glacier excursions",
+      "description": "Vistas of the centuries old glaciers"
+    },
+    {
+      "id": 30,
+      "name": "Iceland",
+      "description": "Explore the dramatic landscape with volcanoes, geysers, hot springs and lava fields"
+    },
+    {
+      "id": 40,
+      "name": "Norway",
+      "description": "Visit breathtaking fjords and waterfalls"
+    },
+    {
+      "id": 50,
+      "name": "Rocky mountain vacation",
+      "description": "Long and relaxing hikes through the mountains"
+    }
+  ]
+}
