@@ -38,7 +38,7 @@ The apps written in the following JavaScript frameworks/libraries:
 
 ## Problems or Suggestions
 
-[Open an issue here](/issues)
+[Open an issue here](https://github.com/MicrosoftDocs/mslearn-staticwebapp/issues)
 
 ## Resources
 
