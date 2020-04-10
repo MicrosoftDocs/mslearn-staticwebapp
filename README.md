@@ -29,8 +29,6 @@ The vacations theme is used throughout the app.
 
 The apps written in the following JavaScript frameworks/libraries:
 
-Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
-
 | folder          | Description                                                                                      |
 | --------------- | ------------------------------------------------------------------------------------------------ |
 | **angular-app** | [Sample Angular app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/angular) |
