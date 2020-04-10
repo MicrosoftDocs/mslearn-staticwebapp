@@ -29,12 +29,12 @@ The vacations theme is used throughout the app.
 
 The apps written in the following JavaScript frameworks/libraries:
 
-| folder          | Description                                                                                      |
-| --------------- | ------------------------------------------------------------------------------------------------ |
-| **angular-app** | [Sample Angular app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/angular) |
-| **react-app**   | [Sample React app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/react)      |
-| **svelte-app**  | [Sample Svelte app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/svelte)    |
-| **vue-app**     | [Sample Vue app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/vue)          |
+| folder          | Description                                                                                         |
+| --------------- | --------------------------------------------------------------------------------------------------- |
+| **angular-app** | [Sample Angular app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/angular-app) |
+| **react-app**   | [Sample React app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/react-app)     |
+| **svelte-app**  | [Sample Svelte app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/svelte-app)   |
+| **vue-app**     | [Sample Vue app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/vue-app)         |
 
 ## Problems or Suggestions
 
