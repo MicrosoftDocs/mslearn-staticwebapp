@@ -1,11 +1,12 @@
 ---
 page_type: sample
 languages:
-  - csharp
+  - javascript
+  - typescript
 products:
-  - dotnet
-description: 'Add 150 character max description'
-urlFragment: 'update-this-to-unique-url-stub'
+  - azure functions
+description: 'Apps that can be used with as a starting point for some MS Learn Modules.'
+urlFragment: 'https://github.com/MicrosoftDocs/mslearn-staticwebapp/generate'
 ---
 
 # Official Microsoft Sample
@@ -20,7 +21,7 @@ Taxonomies for products and languages: https://review.docs.microsoft.com/new-hop
 
 ## Static Web App
 
-This repository contains apps that can be used with as a starting point for some MS Learn Modules. because eveyrone has their own preference for their JavaScript frameworks/library, you can choose which one you prefer.
+This repository contains apps that can be used with as a starting point for some MS Learn Modules. because everyone has their own preference for their JavaScript frameworks/library, you can choose which one you prefer.
 
 The vacations theme is used throughout the app.
 
@@ -30,12 +31,12 @@ The apps written in the following JavaScript frameworks/libraries:
 
 Outline the file contents of the repository. It helps users navigate the codebase, build configuration and any related assets.
 
-| folder        | Description                                                                                      |
-| ------------- | ------------------------------------------------------------------------------------------------ |
-| `angular-app` | [Sample Angular app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/angular). |
-| `react-app`   | [Sample React app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/react)      |
-| `svelte-app`  | [Sample Svelte app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/svelte)    |
-| `vue-app`     | [Sample Vue app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/vue)          |
+| folder          | Description                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------------------ |
+| **angular-app** | [Sample Angular app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/angular) |
+| **react-app**   | [Sample React app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/react)      |
+| **svelte-app**  | [Sample Svelte app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/svelte)    |
+| **vue-app**     | [Sample Vue app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/vue)          |
 
 ## Problems or Suggestions
 
