@@ -6,7 +6,7 @@ languages:
 products:
   - azure functions
 description: 'Apps that can be used with as a starting point for some MS Learn Modules.'
-urlFragment: 'https://github.com/MicrosoftDocs/mslearn-staticwebapp/generate'
+urlFragment: 'https://github.com/MicrosoftDocs/mslearn-staticwebapp'
 ---
 
 # Official Microsoft Sample
