@@ -21,7 +21,7 @@ export default {
       state.vacations.unshift(vacation);
     },
     [UPDATE_VACATION](state, vacation) {
-      const index = state.vacations.findIndex(v => v.id === vacation.id);
+      const index = state.vacations.findIndex((v) => v.id === vacation.id);
       state.vacations.splice(index, 1, vacation);
       state.vacations = [...state.vacations];
     },
@@ -29,7 +29,9 @@ export default {
       state.vacations = vacations;
     },
     [DELETE_VACATION](state, vacation) {
-      state.vacations = [...state.vacations.filter(p => p.id !== vacation.id)];
+      state.vacations = [
+        ...state.vacations.filter((p) => p.id !== vacation.id),
+      ];
     },
   },
   actions: {
@@ -79,6 +81,6 @@ export default {
     },
   },
   getters: {
-    vacations: state => state.vacations,
+    vacations: (state) => state.vacations,
   },
 };
