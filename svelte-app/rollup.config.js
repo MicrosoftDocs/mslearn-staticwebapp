@@ -7,8 +7,9 @@ import postcss from 'rollup-plugin-postcss';
 import replace from '@rollup/plugin-replace';
 
 const production = !process.env.ROLLUP_WATCH;
-const localApi = 'http://localhost:7030/api'; // 'http://localhost:7071/api';
-const API = process.env.API || production ? '/api' : localApi;
+const api = 'http://localhost:7071/api';
+const api_local = 'http://localhost:7030/api';
+const API = process.env.API || production ? '/api' : api;
 
 export default {
   input: 'src/main.js',
