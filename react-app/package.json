@@ -9,8 +9,8 @@
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "quick": "concurrently \"npm run backend\" \"npm start\"",
-    "backend": "json-server --watch db.json --routes routes.json --port 7020"
+    "backend": "json-server --watch db.json --routes routes.json --port 7020",
+    "quick": "concurrently \"npm run backend\" \"npm start\""
   },
   "eslintConfig": {
     "extends": "react-app"

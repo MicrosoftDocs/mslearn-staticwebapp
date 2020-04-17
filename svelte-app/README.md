@@ -2,16 +2,6 @@
 
 This project was created to help represent a fundamental app written with Svelte. The vacations theme is used throughout the app.
 
-## Prerequisites
-
-Make a copy of the `env.example` file named `.env`, in the root of the project. It should contain the following code.
-
-`.env`
-
-```
-PORT=7030
-```
-
 ## Getting Started
 
 1. Create a repository from this template repository <https://github.com/MicrosoftDocs/mslearn-staticwebapp/generate>

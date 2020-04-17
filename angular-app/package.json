@@ -7,9 +7,8 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "map": "source-map-explorer dist/angular-app/*es2015*.js*",
-    "quick": "concurrently \"npm run backend\" \"npm run start\"",
-    "backend": "json-server --watch db.json --routes routes.json --port 7010"
+    "backend": "json-server --watch db.json --routes routes.json --port 7010",
+    "quick": "concurrently \"npm run backend\" \"npm run start\""
   },
   "private": true,
   "dependencies": {
