@@ -6,9 +6,7 @@
     "dev": "rollup -c -w",
     "start": "sirv public --cors --single",
     "backend": "json-server --watch db.json --routes routes.json --port 7030",
-    "quick": "concurrently \"npm run backend\" \"npm run dev\"",
-    "func:start": "cd api && npm start && cd ..",
-    "full-stack": "concurrently \"npm run func:start\" \"npm run dev\""
+    "quick": "concurrently \"npm run backend\" \"npm run dev\""
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
