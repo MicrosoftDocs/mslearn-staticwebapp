@@ -44,7 +44,7 @@ import { Product } from '../core';
               class="input"
               type="text"
               [(ngModel)]="editingProduct.name"
-              placeholder="e.g. Colleen"
+              placeholder="Oranges"
             />
           </div>
           <div class="field">
@@ -56,7 +56,21 @@ import { Product } from '../core';
               class="input"
               type="text"
               [(ngModel)]="editingProduct.description"
-              placeholder="dance fight!"
+              placeholder="box"
+            />
+          </div>
+          <div class="field">
+            <label class="label" for="quantity">
+              quantity
+            </label>
+            <input
+              name="quantity"
+              class="input"
+              type="number"
+              min="1"
+              max="100"
+              [(ngModel)]="editingProduct.quantity"
+              placeholder="1"
             />
           </div>
         </div>
@@ -96,7 +110,12 @@ export class ProductDetailComponent implements OnChanges {
       this.editingProduct = { ...this.product };
       this.addMode = false;
     } else {
-      this.editingProduct = { id: undefined, name: '', description: '' };
+      this.editingProduct = {
+        id: undefined,
+        name: '',
+        description: '',
+        quantity: 1,
+      };
       this.addMode = true;
     }
   }
