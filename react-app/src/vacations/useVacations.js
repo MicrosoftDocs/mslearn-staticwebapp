@@ -2,32 +2,30 @@ import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-  addVacationAction,
-  deleteVacationAction,
-  loadVacationsAction,
-  selectVacationAction,
-  updateVacationAction,
+  addProductAction,
+  deleteProductAction,
+  loadProductsAction,
+  selectProductAction,
+  updateProductAction,
 } from '../store';
 
-/** Custom hook for accessing Vacation state in redux store */
-function useVacations() {
+/** Custom hook for accessing Product state in redux store */
+function useProducts() {
   const dispatch = useDispatch();
 
   return {
     // Selectors
-    vacations: useSelector((state) => state.vacations.data),
-    selectedVacation: useSelector((state) => state.selectedVacation),
+    products: useSelector((state) => state.products.data),
+    selectedProduct: useSelector((state) => state.selectedProduct),
 
     // Dispatchers
     // Wrap any dispatcher that could be called within a useEffect() in a useCallback()
-    addVacation: (vacation) => dispatch(addVacationAction(vacation)),
-    deleteVacation: (vacation) => dispatch(deleteVacationAction(vacation)),
-    getVacations: useCallback(() => dispatch(loadVacationsAction()), [
-      dispatch,
-    ]), // called within a useEffect()
-    selectVacation: (vacation) => dispatch(selectVacationAction(vacation)),
-    updateVacation: (vacation) => dispatch(updateVacationAction(vacation)),
+    addProduct: (product) => dispatch(addProductAction(product)),
+    deleteProduct: (product) => dispatch(deleteProductAction(product)),
+    getProducts: useCallback(() => dispatch(loadProductsAction()), [dispatch]), // called within a useEffect()
+    selectProduct: (product) => dispatch(selectProductAction(product)),
+    updateProduct: (product) => dispatch(updateProductAction(product)),
   };
 }
 
-export default useVacations;
+export default useProducts;

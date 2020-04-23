@@ -2,9 +2,9 @@
 import ButtonFooter from '@/components/button-footer.vue';
 
 export default {
-  name: 'VacationDetail',
+  name: 'ProductDetail',
   props: {
-    vacation: {
+    product: {
       type: Object,
       default() {},
     },
@@ -13,16 +13,16 @@ export default {
   data() {
     return {
       addMode: false,
-      editingVacation: { ...this.vacation },
+      editingProduct: { ...this.product },
     };
   },
   watch: {
-    vacation() {
-      if (this.vacation && this.vacation.id) {
-        this.editingVacation = { ...this.vacation };
+    product() {
+      if (this.product && this.product.id) {
+        this.editingProduct = { ...this.product };
         this.addMode = false;
       } else {
-        this.editingVacation = { id: undefined, name: '', description: '' };
+        this.editingProduct = { id: undefined, name: '', description: '' };
         this.addMode = true;
       }
     },
@@ -31,8 +31,8 @@ export default {
     clear() {
       this.$emit('unselect');
     },
-    saveVacation() {
-      this.$emit('save', this.editingVacation);
+    saveProduct() {
+      this.$emit('save', this.editingProduct);
       this.clear();
     },
   },
@@ -42,19 +42,19 @@ export default {
 <template>
   <div class="card edit-detail">
     <header class="card-header">
-      <p class="card-header-title">{{ editingVacation.name }}</p>
+      <p class="card-header-title">{{ editingProduct.name }}</p>
     </header>
     <div class="card-content">
       <div class="content">
-        <div class="field" v-if="editingVacation.id">
+        <div class="field" v-if="editingProduct.id">
           <label class="label" for="id">id</label>
           <input
             class="input"
             name="id"
-            placeholder="e.g. VacationColleen"
+            placeholder="e.g. ProductColleen"
             readonly
             type="text"
-            v-model="editingVacation.id"
+            v-model="editingProduct.id"
           />
         </div>
         <div class="field">
@@ -64,7 +64,7 @@ export default {
             name="name"
             placeholder="e.g. Colleen"
             type="text"
-            v-model="editingVacation.name"
+            v-model="editingProduct.name"
           />
         </div>
         <div class="field">
@@ -74,7 +74,7 @@ export default {
             name="description"
             placeholder="dance fight!"
             type="text"
-            v-model="editingVacation.description"
+            v-model="editingProduct.description"
           />
         </div>
       </div>
@@ -85,16 +85,16 @@ export default {
         label="Cancel"
         :className="'cancel-button'"
         :iconClasses="'fas fa-undo'"
-        :item="editingVacation"
+        :item="editingProduct"
         @clicked="clear"
       ></ButtonFooter>
       <ButtonFooter
         class="card-footer-item"
         :className="'save-button'"
         :iconClasses="'fas fa-save'"
-        :item="editingVacation"
+        :item="editingProduct"
         label="Save"
-        @clicked="saveVacation"
+        @clicked="saveProduct"
       ></ButtonFooter>
     </footer>
   </div>

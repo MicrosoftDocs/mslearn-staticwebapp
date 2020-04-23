@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <nav class="menu">
       <p class="menu-label">Menu</p>
       <ul class="menu-list">
-        <a routerLink="/vacations" routerLinkActive="router-link-active">
+        <a routerLink="/products" routerLinkActive="router-link-active">
           <span>Vacatons</span>
         </a>
         <a routerLink="/about" routerLinkActive="router-link-active">

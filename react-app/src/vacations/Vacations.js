@@ -2,54 +2,54 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { ListHeader, ModalYesNo } from '../components';
-import VacationDetail from './VacationDetail';
-import VacationList from './VacationList';
-import useVacations from './useVacations';
+import ProductDetail from './ProductDetail';
+import ProductList from './ProductList';
+import useProducts from './useProducts';
 
 const captains = console;
 
-function Vacations({ history }) {
-  const [vacationToDelete, setVacationToDelete] = useState(null);
+function Products({ history }) {
+  const [productToDelete, setProductToDelete] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const {
-    addVacation,
-    deleteVacation,
-    getVacations,
-    vacations,
-    selectVacation,
-    selectedVacation,
-    updateVacation,
-  } = useVacations();
+    addProduct,
+    deleteProduct,
+    getProducts,
+    products,
+    selectProduct,
+    selectedProduct,
+    updateProduct,
+  } = useProducts();
 
   useEffect(() => {
-    getVacations();
-  }, [getVacations]);
+    getProducts();
+  }, [getProducts]);
 
-  function addNewVacation() {
-    selectVacation({});
-    history.push('/vacations/0');
+  function addNewProduct() {
+    selectProduct({});
+    history.push('/products/0');
   }
 
-  function handleCancelVacation() {
-    history.push('/vacations');
-    selectVacation(null);
-    setVacationToDelete(null);
+  function handleCancelProduct() {
+    history.push('/products');
+    selectProduct(null);
+    setProductToDelete(null);
   }
 
-  function handleDeleteVacation(vacation) {
-    selectVacation(null);
-    setVacationToDelete(vacation);
+  function handleDeleteProduct(product) {
+    selectProduct(null);
+    setProductToDelete(product);
     setShowModal(true);
   }
 
-  function handleSaveVacation(vacation) {
-    if (selectedVacation && selectedVacation.name) {
-      captains.log(vacation);
-      updateVacation(vacation);
+  function handleSaveProduct(product) {
+    if (selectedProduct && selectedProduct.name) {
+      captains.log(product);
+      updateProduct(product);
     } else {
-      addVacation(vacation);
+      addProduct(product);
     }
-    handleCancelVacation();
+    handleCancelProduct();
   }
 
   function handleCloseModal() {
@@ -58,52 +58,52 @@ function Vacations({ history }) {
 
   function handleDeleteFromModal() {
     setShowModal(false);
-    deleteVacation(vacationToDelete);
-    handleCancelVacation();
+    deleteProduct(productToDelete);
+    handleCancelProduct();
   }
 
-  function handleSelectVacation(selectedVacation) {
-    selectVacation(selectedVacation);
-    captains.log(`you selected ${selectedVacation.name}`);
+  function handleSelectProduct(selectedProduct) {
+    selectProduct(selectedProduct);
+    captains.log(`you selected ${selectedProduct.name}`);
   }
 
   function handleRefresh() {
-    handleCancelVacation();
-    getVacations();
+    handleCancelProduct();
+    getProducts();
   }
 
   return (
     <div className="content-container">
       <ListHeader
-        title="Vacations"
-        handleAdd={addNewVacation}
+        title="Products"
+        handleAdd={addNewProduct}
         handleRefresh={handleRefresh}
-        routePath="/vacations"
+        routePath="/products"
       />
       <div className="columns is-multiline is-variable">
         <div className="column is-8">
           <Switch>
             <Route
               exact
-              path="/vacations"
+              path="/products"
               component={() => (
-                <VacationList
-                  vacations={vacations}
-                  selectedVacation={selectedVacation}
-                  handleSelectVacation={handleSelectVacation}
-                  handleDeleteVacation={handleDeleteVacation}
+                <ProductList
+                  products={products}
+                  selectedProduct={selectedProduct}
+                  handleSelectProduct={handleSelectProduct}
+                  handleDeleteProduct={handleDeleteProduct}
                 />
               )}
             />
             <Route
               exact
-              path="/vacations/:id"
+              path="/products/:id"
               component={() => {
                 return (
-                  <VacationDetail
-                    vacation={selectedVacation}
-                    handleCancelVacation={handleCancelVacation}
-                    handleSaveVacation={handleSaveVacation}
+                  <ProductDetail
+                    product={selectedProduct}
+                    handleCancelProduct={handleCancelProduct}
+                    handleSaveProduct={handleSaveProduct}
                   />
                 );
               }}
@@ -114,7 +114,7 @@ function Vacations({ history }) {
 
       {showModal && (
         <ModalYesNo
-          message={`Would you like to delete ${vacationToDelete.name}?`}
+          message={`Would you like to delete ${productToDelete.name}?`}
           onNo={handleCloseModal}
           onYes={handleDeleteFromModal}
         />
@@ -123,4 +123,4 @@ function Vacations({ history }) {
   );
 }
 
-export default Vacations;
+export default Products;

@@ -6,41 +6,37 @@ import {
   ChangeDetectionStrategy,
   TrackByFunction,
 } from '@angular/core';
-import { Vacation } from '../core';
+import { Product } from '../core';
 
 @Component({
-  selector: 'app-vacation-list',
+  selector: 'app-product-list',
   template: `
     <ul class="list">
       <li
         role="presentation"
-        *ngFor="
-          let vacation of vacations;
-          trackBy: trackByVacation;
-          let i = index
-        "
+        *ngFor="let product of products; trackBy: trackByProduct; let i = index"
       >
         <div class="card">
           <app-card-content
-            [name]="vacation.name"
-            [description]="vacation.description"
+            [name]="product.name"
+            [description]="product.description"
           ></app-card-content>
           <footer class="card-footer">
             <app-button-footer
               class="card-footer-item"
               [className]="'delete-item'"
               [iconClasses]="'fas fa-trash'"
-              (clicked)="deleteVacation($event)"
+              (clicked)="deleteProduct($event)"
               label="Delete"
-              [item]="vacation"
+              [item]="product"
             ></app-button-footer>
             <app-button-footer
               class="card-footer-item"
               [className]="'edit-item'"
               [iconClasses]="'fas fa-edit'"
-              (clicked)="selectVacation($event)"
+              (clicked)="selectProduct($event)"
               label="Edit"
-              [item]="vacation"
+              [item]="product"
             ></app-button-footer>
           </footer>
         </div>
@@ -49,27 +45,27 @@ import { Vacation } from '../core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class VacationListComponent {
-  @Input() vacations: Vacation[];
-  @Output() deleted = new EventEmitter<Vacation>();
-  @Output() selected = new EventEmitter<Vacation>();
+export class ProductListComponent {
+  @Input() products: Product[];
+  @Output() deleted = new EventEmitter<Product>();
+  @Output() selected = new EventEmitter<Product>();
 
-  // byId(vacation: Vacation) {
-  //   return vacation.id;
+  // byId(product: Product) {
+  //   return product.id;
   // }
-  foo(vacation: Vacation): string {
-    return vacation.id;
+  foo(product: Product): string {
+    return product.id;
   }
 
-  trackByVacation(index: number, vacation: Vacation): string {
-    return vacation.id;
+  trackByProduct(index: number, product: Product): string {
+    return product.id;
   }
 
-  selectVacation(vacation: Vacation) {
-    this.selected.emit(vacation);
+  selectProduct(product: Product) {
+    this.selected.emit(product);
   }
 
-  deleteVacation(vacation: Vacation) {
-    this.deleted.emit(vacation);
+  deleteProduct(product: Product) {
+    this.deleted.emit(product);
   }
 }

@@ -10,14 +10,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/vacations',
+      redirect: '/products',
     },
     {
-      path: '/vacations',
-      name: 'vacations',
+      path: '/products',
+      name: 'products',
       component: () =>
         import(
-          /* webpackChunkName: "vacations" */ './views/vacations/vacations.vue'
+          /* webpackChunkName: "products" */ './views/products/products.vue'
         ),
     },
     {

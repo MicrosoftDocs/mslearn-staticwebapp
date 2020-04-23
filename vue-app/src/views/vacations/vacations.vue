@@ -2,47 +2,47 @@
 import { mapActions, mapGetters } from 'vuex';
 import ListHeader from '@/components/list-header.vue';
 import Modal from '@/components/modal.vue';
-import VacationDetail from './vacation-detail.vue';
-import VacationList from './vacation-list.vue';
+import ProductDetail from './product-detail.vue';
+import ProductList from './product-list.vue';
 
 const captains = console;
 
 export default {
-  name: 'Vacations',
+  name: 'Products',
   data() {
     return {
-      vacationToDelete: null,
+      productToDelete: null,
       message: '',
-      routePath: '/vacations',
+      routePath: '/products',
       selected: null,
       showModal: false,
-      title: 'Vacations',
+      title: 'Products',
     };
   },
   components: {
     ListHeader,
-    VacationList,
-    VacationDetail,
+    ProductList,
+    ProductDetail,
     Modal,
   },
   created() {
-    this.getVacationsAction();
+    this.getProductsAction();
   },
   computed: {
-    ...mapGetters('vacations', { vacations: 'vacations' }),
+    ...mapGetters('products', { products: 'products' }),
   },
   methods: {
-    ...mapActions('vacations', [
-      'getVacationsAction',
-      'deleteVacationAction',
-      'addVacationAction',
-      'updateVacationAction',
+    ...mapActions('products', [
+      'getProductsAction',
+      'deleteProductAction',
+      'addProductAction',
+      'updateProductAction',
     ]),
-    askToDelete(vacation) {
-      this.vacationToDelete = vacation;
+    askToDelete(product) {
+      this.productToDelete = product;
       this.showModal = true;
-      if (this.vacationToDelete.name) {
-        this.message = `Would you like to delete ${this.vacationToDelete.name}?`;
+      if (this.productToDelete.name) {
+        this.message = `Would you like to delete ${this.productToDelete.name}?`;
         captains.log(this.message);
       }
     },
@@ -52,33 +52,33 @@ export default {
     closeModal() {
       this.showModal = false;
     },
-    deleteVacation() {
+    deleteProduct() {
       this.closeModal();
-      if (this.vacationToDelete) {
+      if (this.productToDelete) {
         captains.log(
-          `You said you want to delete ${this.vacationToDelete.name}`
+          `You said you want to delete ${this.productToDelete.name}`
         );
-        this.deleteVacationAction(this.vacationToDelete);
+        this.deleteProductAction(this.productToDelete);
       }
       this.clear();
     },
     enableAddMode() {
       this.selected = {};
     },
-    getVacations() {
-      this.getVacationsAction();
+    getProducts() {
+      this.getProductsAction();
       this.clear();
     },
-    save(vacation) {
-      captains.log('vacation changed', vacation);
-      if (vacation.id) {
-        this.updateVacationAction(vacation);
+    save(product) {
+      captains.log('product changed', product);
+      if (product.id) {
+        this.updateProductAction(product);
       } else {
-        this.addVacationAction(vacation);
+        this.addProductAction(product);
       }
     },
-    select(vacation) {
-      this.selected = vacation;
+    select(product) {
+      this.selected = product;
     },
   },
 };
@@ -88,33 +88,33 @@ export default {
   <div class="content-container">
     <ListHeader
       :title="title"
-      @refresh="getVacations"
+      @refresh="getProducts"
       @add="enableAddMode"
       :routePath="routePath"
     ></ListHeader>
     <div class="columns is-multiline is-variable">
-      <div class="column is-8" v-if="vacations">
-        <VacationList
+      <div class="column is-8" v-if="products">
+        <ProductList
           v-if="!selected"
-          :vacations="vacations"
+          :products="products"
           @selected="select($event)"
           @deleted="askToDelete($event)"
-        ></VacationList>
-        <VacationDetail
+        ></ProductList>
+        <ProductDetail
           v-if="selected"
-          :vacation="selected"
+          :product="selected"
           @unselect="clear"
           @save="save"
-        ></VacationDetail>
+        ></ProductDetail>
       </div>
     </div>
 
     <Modal
-      class="modal-vacation"
+      class="modal-product"
       :message="message"
       :isOpen="showModal"
       @handleNo="closeModal"
-      @handleYes="deleteVacation"
+      @handleYes="deleteProduct"
     ></Modal>
   </div>
 </template>

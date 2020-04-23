@@ -1,29 +1,39 @@
 {
-  "vacations": [
+  "products": [
     {
       "id": 10,
-      "name": "Florida beach getaway",
-      "description": "Soft beach sands, warm sunsets, calm watersasdads"
+      "name": "Strawberries",
+      "description": "16oz package of fresh organic strawberries"
     },
     {
       "id": 20,
-      "name": "Glacier excursions",
-      "description": "Vistas of the centuries old glaciers"
+      "name": "Sliced bread",
+      "description": "1 loaf of fresh sliced wheat bread"
     },
     {
       "id": 30,
-      "name": "Iceland",
-      "description": "Explore the dramatic landscape with volcanoes, geysers, hot springs and lava fields"
+      "name": "Apples",
+      "description": "1 bag of 7 fresh McIntosh apples"
     },
     {
       "id": 40,
-      "name": "Norway",
-      "description": "Visit breathtaking fjords and waterfalls"
+      "name": "Milk",
+      "description": "1 liter of fresh milk"
     },
     {
       "id": 50,
-      "name": "Rocky mountain vacation",
-      "description": "Long and relaxing hikes through the mountains"
+      "name": "Large eggs",
+      "description": "1 large carton of eggs"
+    },
+    {
+      "id": 60,
+      "name": "Lettuce",
+      "description": "1 head of fresh romaine lettuce"
+    },
+    {
+      "id": 70,
+      "name": "Green peppers",
+      "description": "Fresh organic green peppers"
     }
   ]
 }

@@ -3,53 +3,53 @@ import { withRouter } from 'react-router';
 
 import { ButtonFooter, CardContent } from '../components';
 
-function VacationList({
-  handleDeleteVacation,
-  handleSelectVacation,
-  vacations,
+function ProductList({
+  handleDeleteProduct,
+  handleSelectProduct,
+  products,
   history,
 }) {
-  function selectVacation(e) {
-    const vacation = getSelectedVacation(e);
-    handleSelectVacation(vacation);
-    history.push(`/vacations/${vacation.id}`);
+  function selectProduct(e) {
+    const product = getSelectedProduct(e);
+    handleSelectProduct(product);
+    history.push(`/products/${product.id}`);
   }
 
-  function deleteVacation(e) {
-    const vacation = getSelectedVacation(e);
-    handleDeleteVacation(vacation);
+  function deleteProduct(e) {
+    const product = getSelectedProduct(e);
+    handleDeleteProduct(product);
   }
 
-  function getSelectedVacation(e) {
+  function getSelectedProduct(e) {
     const index = +e.currentTarget.dataset.index;
-    return vacations[index];
+    return products[index];
   }
 
   return (
     <ul className="list">
-      {vacations.map((vacation, index) => (
-        <li key={vacation.id} role="presentation">
+      {products.map((product, index) => (
+        <li key={product.id} role="presentation">
           <div className="card">
             <CardContent
-              name={vacation.name}
-              description={vacation.description}
+              name={product.name}
+              description={product.description}
             />
             <footer className="card-footer">
               <ButtonFooter
                 className="delete-item"
                 iconClasses="fas fa-trash"
-                onClick={deleteVacation}
+                onClick={deleteProduct}
                 label="Delete"
                 dataIndex={index}
-                dataId={vacation.id}
+                dataId={product.id}
               />
               <ButtonFooter
                 className="edit-item"
                 iconClasses="fas fa-edit"
-                onClick={selectVacation}
+                onClick={selectProduct}
                 label="Edit"
                 dataIndex={index}
-                dataId={vacation.id}
+                dataId={product.id}
               />
             </footer>
           </div>
@@ -59,4 +59,4 @@ function VacationList({
   );
 }
 
-export default withRouter(VacationList);
+export default withRouter(ProductList);

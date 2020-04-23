@@ -5,9 +5,9 @@ import CardContent from '@/components/card-content.vue';
 const captains = console;
 
 export default {
-  name: 'VacationList',
+  name: 'ProductList',
   props: {
-    vacations: {
+    products: {
       type: Array,
       default: () => [],
     },
@@ -17,13 +17,13 @@ export default {
     ButtonFooter,
   },
   methods: {
-    deleteVacation(vacation) {
-      this.$emit('deleted', vacation);
-      captains.log(`You tried to delete ${vacation.name}`);
+    deleteProduct(product) {
+      this.$emit('deleted', product);
+      captains.log(`You tried to delete ${product.name}`);
     },
-    selectVacation(vacation) {
-      captains.log(`You tried to select ${vacation.name}`);
-      this.$emit('selected', vacation);
+    selectProduct(product) {
+      captains.log(`You tried to select ${product.name}`);
+      this.$emit('selected', product);
     },
   },
 };
@@ -32,33 +32,30 @@ export default {
 <template>
   <ul class="list">
     <li
-      v-for="(vacation, index) in vacations"
-      :key="vacation.id"
+      v-for="(product, index) in products"
+      :key="product.id"
       role="presentation"
     >
       <div class="card">
-        <CardContent
-          :name="vacation.name"
-          :description="vacation.description"
-        />
+        <CardContent :name="product.name" :description="product.description" />
         <footer class="card-footer">
           <ButtonFooter
             class="delete-item"
             iconClasses="fas fa-trash"
-            @clicked="deleteVacation"
+            @clicked="deleteProduct"
             label="Delete"
             :dataIndex="index"
-            :dataId="vacation.id"
-            :item="vacation"
+            :dataId="product.id"
+            :item="product"
           />
           <ButtonFooter
             class="edit-item"
             iconClasses="fas fa-edit"
-            @clicked="selectVacation"
+            @clicked="selectProduct"
             label="Edit"
             :dataIndex="index"
-            :dataId="vacation.id"
-            :item="vacation"
+            :dataId="product.id"
+            :item="product"
           />
         </footer>
       </div>

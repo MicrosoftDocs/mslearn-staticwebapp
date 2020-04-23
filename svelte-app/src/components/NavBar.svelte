@@ -19,7 +19,7 @@
 <nav class="column is-2 menu">
   <p class="menu-label">Menu</p>
   <ul class="menu-list">
-    <Link to="/vacations" {getProps}>Vacations</Link>
+    <Link to="/products" {getProps}>Products</Link>
     <Link to="/about" {getProps}>About</Link>
   </ul>
 </nav>

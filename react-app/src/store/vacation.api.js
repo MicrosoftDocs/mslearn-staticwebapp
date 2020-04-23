@@ -4,23 +4,23 @@ import API from './config';
 
 const captains = console;
 
-export const deleteVacationApi = async (vacation) => {
-  const response = await axios.delete(`${API}/vacations/${vacation.id}`);
+export const deleteProductApi = async (product) => {
+  const response = await axios.delete(`${API}/products/${product.id}`);
   return parseItem(response, 200);
 };
 
-export const updateVacationApi = async (vacation) => {
-  captains.log(vacation.id);
-  const response = await axios.put(`${API}/vacations/${vacation.id}`, vacation);
+export const updateProductApi = async (product) => {
+  captains.log(product.id);
+  const response = await axios.put(`${API}/products/${product.id}`, product);
   return parseItem(response, 200);
 };
 
-export const addVacationApi = async (vacation) => {
-  const response = await axios.post(`${API}/vacations`, vacation);
+export const addProductApi = async (product) => {
+  const response = await axios.post(`${API}/products`, product);
   return parseItem(response, 201);
 };
 
-export const loadVacationsApi = async () => {
-  const response = await axios.get(`${API}/vacations`);
+export const loadProductsApi = async () => {
+  const response = await axios.get(`${API}/products`);
   return parseList(response, 200);
 };

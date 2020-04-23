@@ -2,10 +2,10 @@ import axios from 'axios';
 import API from '../config';
 import { parseItem, parseList } from './action-utils';
 import {
-  ADD_VACATION,
-  DELETE_VACATION,
-  GET_VACATIONS,
-  UPDATE_VACATION,
+  ADD_PRODUCT,
+  DELETE_PRODUCT,
+  GET_PRODUCTS,
+  UPDATE_PRODUCT,
 } from './mutation-types';
 
 const captains = console;
@@ -14,73 +14,71 @@ export default {
   strict: process.env.NODE_ENV !== 'production',
   namespaced: true,
   state: {
-    vacations: [],
+    products: [],
   },
   mutations: {
-    [ADD_VACATION](state, vacation) {
-      state.vacations.unshift(vacation);
+    [ADD_PRODUCT](state, product) {
+      state.products.unshift(product);
     },
-    [UPDATE_VACATION](state, vacation) {
-      const index = state.vacations.findIndex((v) => v.id === vacation.id);
-      state.vacations.splice(index, 1, vacation);
-      state.vacations = [...state.vacations];
+    [UPDATE_PRODUCT](state, product) {
+      const index = state.products.findIndex((v) => v.id === product.id);
+      state.products.splice(index, 1, product);
+      state.products = [...state.products];
     },
-    [GET_VACATIONS](state, vacations) {
-      state.vacations = vacations;
+    [GET_PRODUCTS](state, products) {
+      state.products = products;
     },
-    [DELETE_VACATION](state, vacation) {
-      state.vacations = [
-        ...state.vacations.filter((p) => p.id !== vacation.id),
-      ];
+    [DELETE_PRODUCT](state, product) {
+      state.products = [...state.products.filter((p) => p.id !== product.id)];
     },
   },
   actions: {
     // actions let us get to ({ state, getters, commit, dispatch }) {
-    async getVacationsAction({ commit }) {
+    async getProductsAction({ commit }) {
       try {
-        const response = await axios.get(`${API}/vacations`);
-        const vacations = parseList(response);
-        commit(GET_VACATIONS, vacations);
-        return vacations;
+        const response = await axios.get(`${API}/products`);
+        const products = parseList(response);
+        commit(GET_PRODUCTS, products);
+        return products;
       } catch (error) {
         captains.error(error);
       }
     },
-    async deleteVacationAction({ commit }, vacation) {
+    async deleteProductAction({ commit }, product) {
       try {
-        const response = await axios.delete(`${API}/vacations/${vacation.id}`);
+        const response = await axios.delete(`${API}/products/${product.id}`);
         parseItem(response, 200);
-        commit(DELETE_VACATION, vacation);
+        commit(DELETE_PRODUCT, product);
         return null;
       } catch (error) {
         captains.error(error);
       }
     },
-    async updateVacationAction({ commit }, vacation) {
+    async updateProductAction({ commit }, product) {
       try {
         const response = await axios.put(
-          `${API}/vacations/${vacation.id}`,
-          vacation
+          `${API}/products/${product.id}`,
+          product
         );
-        const updatedvacation = parseItem(response, 200);
-        commit(UPDATE_VACATION, updatedvacation);
-        return updatedvacation;
+        const updatedproduct = parseItem(response, 200);
+        commit(UPDATE_PRODUCT, updatedproduct);
+        return updatedproduct;
       } catch (error) {
         captains.error(error);
       }
     },
-    async addVacationAction({ commit }, vacation) {
+    async addProductAction({ commit }, product) {
       try {
-        const response = await axios.post(`${API}/vacations`, vacation);
-        const addedVacation = parseItem(response, 201);
-        commit(ADD_VACATION, addedVacation);
-        return addedVacation;
+        const response = await axios.post(`${API}/products`, product);
+        const addedProduct = parseItem(response, 201);
+        commit(ADD_PRODUCT, addedProduct);
+        return addedProduct;
       } catch (error) {
         captains.error(error);
       }
     },
   },
   getters: {
-    vacations: (state) => state.vacations,
+    products: (state) => state.products,
   },
 };

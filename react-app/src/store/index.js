@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
-import { selectedVacationReducer, vacationsReducer } from './vacation.reducer';
+import { selectedProductReducer, productsReducer } from './product.reducer';
 
-export * from './vacation.actions';
-export * from './vacation.reducer';
-export * from './vacation.saga';
+export * from './product.actions';
+export * from './product.reducer';
+export * from './product.saga';
 
 const store = combineReducers({
-  vacations: vacationsReducer,
-  selectedVacation: selectedVacationReducer,
+  products: productsReducer,
+  selectedProduct: selectedProductReducer,
 });
 
 export default store;

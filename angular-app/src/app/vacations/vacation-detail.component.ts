@@ -8,21 +8,21 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 
-import { Vacation } from '../core';
+import { Product } from '../core';
 
 @Component({
-  selector: 'app-vacation-detail',
+  selector: 'app-product-detail',
   template: `
     <div class="card edit-detail">
       <header class="card-header">
         <p class="card-header-title">
-          {{ editingVacation.name }}
+          {{ editingProduct.name }}
           &nbsp;
         </p>
       </header>
       <div class="card-content">
         <div class="content">
-          <div class="field" *ngIf="editingVacation.id">
+          <div class="field" *ngIf="editingProduct.id">
             <label class="label" for="id">
               id
             </label>
@@ -30,8 +30,8 @@ import { Vacation } from '../core';
               name="id"
               class="input"
               type="text"
-              [(ngModel)]="editingVacation.id"
-              placeholder="e.g. VacationColleen"
+              [(ngModel)]="editingProduct.id"
+              placeholder="e.g. ProductColleen"
               readOnly
             />
           </div>
@@ -43,7 +43,7 @@ import { Vacation } from '../core';
               name="name"
               class="input"
               type="text"
-              [(ngModel)]="editingVacation.name"
+              [(ngModel)]="editingProduct.name"
               placeholder="e.g. Colleen"
             />
           </div>
@@ -55,7 +55,7 @@ import { Vacation } from '../core';
               name="description"
               class="input"
               type="text"
-              [(ngModel)]="editingVacation.description"
+              [(ngModel)]="editingProduct.description"
               placeholder="dance fight!"
             />
           </div>
@@ -68,35 +68,35 @@ import { Vacation } from '../core';
           [iconClasses]="'fas fa-undo'"
           (clicked)="clear()"
           label="Cancel"
-          [item]="editingVacation"
+          [item]="editingProduct"
         ></app-button-footer>
         <app-button-footer
           class="card-footer-item"
           [className]="'save-button'"
           [iconClasses]="'fas fa-save'"
-          (clicked)="saveVacation()"
+          (clicked)="saveProduct()"
           label="Save"
-          [item]="editingVacation"
+          [item]="editingProduct"
         ></app-button-footer>
       </footer>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class VacationDetailComponent implements OnChanges {
-  @Input() vacation: Vacation;
+export class ProductDetailComponent implements OnChanges {
+  @Input() product: Product;
   @Output() unselect = new EventEmitter<string>();
-  @Output() save = new EventEmitter<Vacation>();
+  @Output() save = new EventEmitter<Product>();
 
   addMode = false;
-  editingVacation: Vacation;
+  editingProduct: Product;
 
   ngOnChanges(changes: SimpleChanges) {
-    if (this.vacation && this.vacation.id) {
-      this.editingVacation = { ...this.vacation };
+    if (this.product && this.product.id) {
+      this.editingProduct = { ...this.product };
       this.addMode = false;
     } else {
-      this.editingVacation = { id: undefined, name: '', description: '' };
+      this.editingProduct = { id: undefined, name: '', description: '' };
       this.addMode = true;
     }
   }
@@ -105,8 +105,8 @@ export class VacationDetailComponent implements OnChanges {
     this.unselect.emit();
   }
 
-  saveVacation() {
-    this.save.emit(this.editingVacation);
+  saveProduct() {
+    this.save.emit(this.editingProduct);
     this.clear();
   }
 }
