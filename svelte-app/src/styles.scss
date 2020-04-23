@@ -79,8 +79,9 @@ header {
   .input[readonly] {
     background-color: $shade-light;
   }
-  .input[placeholder] {
+  .input::placeholder {
     color: #ccc;
+    font-style: italic;
   }
 }
 
