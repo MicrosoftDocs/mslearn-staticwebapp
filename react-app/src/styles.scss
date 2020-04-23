@@ -76,6 +76,9 @@ header {
   .input[readonly] {
     background-color: $shade-light;
   }
+  .input[placeholder] {
+    color: #ccc;
+  }
 }
 
 .content-title-group {
