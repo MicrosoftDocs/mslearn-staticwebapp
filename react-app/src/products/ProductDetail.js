@@ -60,8 +60,8 @@ function ProductDetail({
             onChange={handleDescriptionChange}
           />
           <div className="field">
-            <label className="label" htmlFor={name}>
-              {name}
+            <label className="label" htmlFor="quantity">
+              quantity
             </label>
             <input
               name="quantity"
