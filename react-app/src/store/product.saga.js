@@ -1,17 +1,17 @@
 import { put, takeEvery, call, all } from 'redux-saga/effects';
 import {
-  LOAD_VILLAIN,
-  LOAD_VILLAIN_SUCCESS,
-  LOAD_VILLAIN_ERROR,
-  UPDATE_VILLAIN,
-  UPDATE_VILLAIN_SUCCESS,
-  UPDATE_VILLAIN_ERROR,
-  DELETE_VILLAIN,
-  DELETE_VILLAIN_SUCCESS,
-  DELETE_VILLAIN_ERROR,
-  ADD_VILLAIN,
-  ADD_VILLAIN_SUCCESS,
-  ADD_VILLAIN_ERROR,
+  LOAD_PRODUCT,
+  LOAD_PRODUCT_SUCCESS,
+  LOAD_PRODUCT_ERROR,
+  UPDATE_PRODUCT,
+  UPDATE_PRODUCT_SUCCESS,
+  UPDATE_PRODUCT_ERROR,
+  DELETE_PRODUCT,
+  DELETE_PRODUCT_SUCCESS,
+  DELETE_PRODUCT_ERROR,
+  ADD_PRODUCT,
+  ADD_PRODUCT_SUCCESS,
+  ADD_PRODUCT_ERROR,
 } from './product.actions';
 import {
   addProductApi,
@@ -25,14 +25,14 @@ export function* loadingProductsAsync() {
     const data = yield call(loadProductsApi);
     const productes = [...data];
 
-    yield put({ type: LOAD_VILLAIN_SUCCESS, payload: productes });
+    yield put({ type: LOAD_PRODUCT_SUCCESS, payload: productes });
   } catch (err) {
-    yield put({ type: LOAD_VILLAIN_ERROR, payload: err.message });
+    yield put({ type: LOAD_PRODUCT_ERROR, payload: err.message });
   }
 }
 
 export function* watchLoadingProductsAsync() {
-  yield takeEvery(LOAD_VILLAIN, loadingProductsAsync);
+  yield takeEvery(LOAD_PRODUCT, loadingProductsAsync);
 }
 
 export function* updatingProductAsync({ payload }) {
@@ -40,28 +40,28 @@ export function* updatingProductAsync({ payload }) {
     const data = yield call(updateProductApi, payload);
     const updatedProduct = data;
 
-    yield put({ type: UPDATE_VILLAIN_SUCCESS, payload: updatedProduct });
+    yield put({ type: UPDATE_PRODUCT_SUCCESS, payload: updatedProduct });
   } catch (err) {
-    yield put({ type: UPDATE_VILLAIN_ERROR, payload: err.message });
+    yield put({ type: UPDATE_PRODUCT_ERROR, payload: err.message });
   }
 }
 
 export function* watchUpdatingProductAsync() {
-  yield takeEvery(UPDATE_VILLAIN, updatingProductAsync);
+  yield takeEvery(UPDATE_PRODUCT, updatingProductAsync);
 }
 
 export function* deletingProductAsync({ payload }) {
   try {
     yield call(deleteProductApi, payload);
 
-    yield put({ type: DELETE_VILLAIN_SUCCESS, payload: null });
+    yield put({ type: DELETE_PRODUCT_SUCCESS, payload: null });
   } catch (err) {
-    yield put({ type: DELETE_VILLAIN_ERROR, payload: err.message });
+    yield put({ type: DELETE_PRODUCT_ERROR, payload: err.message });
   }
 }
 
 export function* watchDeletingProductAsync() {
-  yield takeEvery(DELETE_VILLAIN, deletingProductAsync);
+  yield takeEvery(DELETE_PRODUCT, deletingProductAsync);
 }
 
 export function* addingProductAsync({ payload }) {
@@ -69,14 +69,14 @@ export function* addingProductAsync({ payload }) {
     const data = yield call(addProductApi, payload);
     const addedProduct = data;
 
-    yield put({ type: ADD_VILLAIN_SUCCESS, payload: addedProduct });
+    yield put({ type: ADD_PRODUCT_SUCCESS, payload: addedProduct });
   } catch (err) {
-    yield put({ type: ADD_VILLAIN_ERROR, payload: err.message });
+    yield put({ type: ADD_PRODUCT_ERROR, payload: err.message });
   }
 }
 
 export function* watchAddingProductAsync() {
-  yield takeEvery(ADD_VILLAIN, addingProductAsync);
+  yield takeEvery(ADD_PRODUCT, addingProductAsync);
 }
 
 export function* productSaga() {

@@ -1,36 +1,36 @@
-export const LOAD_VILLAIN = '[Products] LOAD_VILLAIN';
-export const LOAD_VILLAIN_SUCCESS = '[Products] LOAD_VILLAIN_SUCCESS';
-export const LOAD_VILLAIN_ERROR = '[Products] LOAD_VILLAIN_ERROR';
+export const LOAD_PRODUCT = '[Products] LOAD_PRODUCT';
+export const LOAD_PRODUCT_SUCCESS = '[Products] LOAD_PRODUCT_SUCCESS';
+export const LOAD_PRODUCT_ERROR = '[Products] LOAD_PRODUCT_ERROR';
 
-export const UPDATE_VILLAIN = '[Products] UPDATE_VILLAIN';
-export const UPDATE_VILLAIN_SUCCESS = '[Products] UPDATE_VILLAIN_SUCCESS';
-export const UPDATE_VILLAIN_ERROR = '[Products] UPDATE_VILLAIN_ERROR';
+export const UPDATE_PRODUCT = '[Products] UPDATE_PRODUCT';
+export const UPDATE_PRODUCT_SUCCESS = '[Products] UPDATE_PRODUCT_SUCCESS';
+export const UPDATE_PRODUCT_ERROR = '[Products] UPDATE_PRODUCT_ERROR';
 
-export const DELETE_VILLAIN = '[Products] DELETE_VILLAIN';
-export const DELETE_VILLAIN_SUCCESS = '[Products] DELETE_VILLAIN_SUCCESS';
-export const DELETE_VILLAIN_ERROR = '[Products] DELETE_VILLAIN_ERROR';
+export const DELETE_PRODUCT = '[Products] DELETE_PRODUCT';
+export const DELETE_PRODUCT_SUCCESS = '[Products] DELETE_PRODUCT_SUCCESS';
+export const DELETE_PRODUCT_ERROR = '[Products] DELETE_PRODUCT_ERROR';
 
-export const ADD_VILLAIN = '[Products] ADD_VILLAIN';
-export const ADD_VILLAIN_SUCCESS = '[Products] ADD_VILLAIN_SUCCESS';
-export const ADD_VILLAIN_ERROR = '[Products] ADD_VILLAIN_ERROR';
+export const ADD_PRODUCT = '[Products] ADD_PRODUCT';
+export const ADD_PRODUCT_SUCCESS = '[Products] ADD_PRODUCT_SUCCESS';
+export const ADD_PRODUCT_ERROR = '[Products] ADD_PRODUCT_ERROR';
 
-export const SELECT_VILLAIN = '[Product] SELECT_VILLAIN';
+export const SELECT_PRODUCT = '[Product] SELECT_PRODUCT';
 
 export const selectProductAction = (product) => ({
-  type: SELECT_VILLAIN,
+  type: SELECT_PRODUCT,
   payload: product,
 });
-export const loadProductsAction = () => ({ type: LOAD_VILLAIN });
+export const loadProductsAction = () => ({ type: LOAD_PRODUCT });
 
 export const updateProductAction = (product) => ({
-  type: UPDATE_VILLAIN,
+  type: UPDATE_PRODUCT,
   payload: product,
 });
 export const deleteProductAction = (product) => ({
-  type: DELETE_VILLAIN,
+  type: DELETE_PRODUCT,
   payload: product,
 });
 export const addProductAction = (product) => ({
-  type: ADD_VILLAIN,
+  type: ADD_PRODUCT,
   payload: product,
 });

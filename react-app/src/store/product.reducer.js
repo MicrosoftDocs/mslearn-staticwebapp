@@ -1,17 +1,17 @@
 import {
-  SELECT_VILLAIN,
-  LOAD_VILLAIN_SUCCESS,
-  LOAD_VILLAIN,
-  LOAD_VILLAIN_ERROR,
-  UPDATE_VILLAIN,
-  UPDATE_VILLAIN_SUCCESS,
-  UPDATE_VILLAIN_ERROR,
-  DELETE_VILLAIN,
-  DELETE_VILLAIN_SUCCESS,
-  DELETE_VILLAIN_ERROR,
-  ADD_VILLAIN,
-  ADD_VILLAIN_SUCCESS,
-  ADD_VILLAIN_ERROR,
+  SELECT_PRODUCT,
+  LOAD_PRODUCT_SUCCESS,
+  LOAD_PRODUCT,
+  LOAD_PRODUCT_ERROR,
+  UPDATE_PRODUCT,
+  UPDATE_PRODUCT_SUCCESS,
+  UPDATE_PRODUCT_ERROR,
+  DELETE_PRODUCT,
+  DELETE_PRODUCT_SUCCESS,
+  DELETE_PRODUCT_ERROR,
+  ADD_PRODUCT,
+  ADD_PRODUCT_SUCCESS,
+  ADD_PRODUCT_ERROR,
 } from './product.actions';
 
 let initState = {
@@ -22,14 +22,14 @@ let initState = {
 
 export const productsReducer = (state = initState, action) => {
   switch (action.type) {
-    case LOAD_VILLAIN:
+    case LOAD_PRODUCT:
       return { ...state, loading: true, error: '' };
-    case LOAD_VILLAIN_SUCCESS:
+    case LOAD_PRODUCT_SUCCESS:
       return { ...state, loading: false, data: [...action.payload] };
-    case LOAD_VILLAIN_ERROR:
+    case LOAD_PRODUCT_ERROR:
       return { ...state, loading: false, error: action.payload };
 
-    case UPDATE_VILLAIN:
+    case UPDATE_PRODUCT:
       return {
         ...state,
         data: state.data.map((h) => {
@@ -39,12 +39,12 @@ export const productsReducer = (state = initState, action) => {
           return h;
         }),
       };
-    case UPDATE_VILLAIN_SUCCESS:
+    case UPDATE_PRODUCT_SUCCESS:
       return modifyProductState(state, action.payload);
-    case UPDATE_VILLAIN_ERROR:
+    case UPDATE_PRODUCT_ERROR:
       return { ...state, loading: false, error: action.payload };
 
-    case DELETE_VILLAIN: {
+    case DELETE_PRODUCT: {
       return {
         ...state,
         loading: true,
@@ -52,12 +52,12 @@ export const productsReducer = (state = initState, action) => {
       };
     }
 
-    case DELETE_VILLAIN_SUCCESS: {
+    case DELETE_PRODUCT_SUCCESS: {
       const result = { ...state, loading: false };
       return result;
     }
 
-    case DELETE_VILLAIN_ERROR: {
+    case DELETE_PRODUCT_ERROR: {
       return {
         ...state,
         data: [...state.data, action.payload.requestData],
@@ -65,11 +65,11 @@ export const productsReducer = (state = initState, action) => {
       };
     }
 
-    case ADD_VILLAIN: {
+    case ADD_PRODUCT: {
       return { ...state, loading: true };
     }
 
-    case ADD_VILLAIN_SUCCESS: {
+    case ADD_PRODUCT_SUCCESS: {
       return {
         ...state,
         loading: false,
@@ -77,7 +77,7 @@ export const productsReducer = (state = initState, action) => {
       };
     }
 
-    case ADD_VILLAIN_ERROR: {
+    case ADD_PRODUCT_ERROR: {
       return { ...state, loading: false };
     }
 
@@ -107,7 +107,7 @@ export const selectedProductReducer = (
   action
 ) => {
   switch (action.type) {
-    case SELECT_VILLAIN:
+    case SELECT_PRODUCT:
       return action.payload ? { ...action.payload } : null;
     default:
       return state;
