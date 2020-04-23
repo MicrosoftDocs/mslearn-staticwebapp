@@ -3,7 +3,7 @@
     <h2 class="title">Product Wish List</h2>
     <p>
       This project was created to help represent a fundamental app written with
-      Svelte. The product theme is used throughout the app.
+      Svelte. The shopping theme is used throughout the app.
     </p>
     <br />
     <h2 class="title">Resources</h2>

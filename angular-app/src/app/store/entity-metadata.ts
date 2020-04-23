@@ -1,7 +1,7 @@
 import { EntityMetadataMap } from '@ngrx/data';
 
 const entityMetadata: EntityMetadataMap = {
-  Vacation: {},
+  Product: {},
 };
 
 export const entityConfig = {

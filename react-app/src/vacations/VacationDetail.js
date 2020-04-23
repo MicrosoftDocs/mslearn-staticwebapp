@@ -3,55 +3,55 @@ import { withRouter } from 'react-router';
 
 import { ButtonFooter, InputDetail } from '../components';
 
-function VacationDetail({
-  vacation: initVacation,
-  handleCancelVacation,
-  handleSaveVacation,
+function ProductDetail({
+  product: initProduct,
+  handleCancelProduct,
+  handleSaveProduct,
   history,
 }) {
-  const [vacation, setVacation] = useState(Object.assign({}, initVacation));
+  const [product, setProduct] = useState(Object.assign({}, initProduct));
 
   useEffect(() => {
-    if (!vacation) {
-      history.push('/vacations'); // no vacation, bail out of Details
+    if (!product) {
+      history.push('/products'); // no product, bail out of Details
     }
-  }, [vacation, history]);
+  }, [product, history]);
 
   function handleSave() {
-    const chgVacation = { ...vacation, id: vacation.id || null };
-    handleSaveVacation(chgVacation);
+    const chgProduct = { ...product, id: product.id || null };
+    handleSaveProduct(chgProduct);
   }
 
   function handleNameChange(e) {
-    setVacation({ ...vacation, name: e.target.value });
+    setProduct({ ...product, name: e.target.value });
   }
 
   function handleDescriptionChange(e) {
-    setVacation({ ...vacation, description: e.target.value });
+    setProduct({ ...product, description: e.target.value });
   }
 
   return (
     <div className="card edit-detail">
       <header className="card-header">
         <p className="card-header-title">
-          {vacation.name}
+          {product.name}
           &nbsp;
         </p>
       </header>
       <div className="card-content">
         <div className="content">
-          {vacation.id && (
-            <InputDetail name="id" value={vacation.id} readOnly="true" />
+          {product.id && (
+            <InputDetail name="id" value={product.id} readOnly="true" />
           )}
           <InputDetail
             name="name"
-            value={vacation.name}
+            value={product.name}
             placeholder="e.g Colleen"
             onChange={handleNameChange}
           />
           <InputDetail
             name="description"
-            value={vacation.description}
+            value={product.description}
             placeholder="e.g dance fight!"
             onChange={handleDescriptionChange}
           />
@@ -61,7 +61,7 @@ function VacationDetail({
         <ButtonFooter
           className="cancel-button"
           iconClasses="fas fa-undo"
-          onClick={handleCancelVacation}
+          onClick={handleCancelProduct}
           label="Cancel"
         />
         <ButtonFooter
@@ -75,4 +75,4 @@ function VacationDetail({
   );
 }
 
-export default withRouter(VacationDetail);
+export default withRouter(ProductDetail);

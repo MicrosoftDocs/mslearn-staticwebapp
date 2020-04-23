@@ -12,7 +12,7 @@ import {
   ADD_VILLAIN,
   ADD_VILLAIN_SUCCESS,
   ADD_VILLAIN_ERROR,
-} from './vacation.actions';
+} from './product.actions';
 
 let initState = {
   loading: false,
@@ -20,7 +20,7 @@ let initState = {
   error: void 0,
 };
 
-export const vacationsReducer = (state = initState, action) => {
+export const productsReducer = (state = initState, action) => {
   switch (action.type) {
     case LOAD_VILLAIN:
       return { ...state, loading: true, error: '' };
@@ -40,7 +40,7 @@ export const vacationsReducer = (state = initState, action) => {
         }),
       };
     case UPDATE_VILLAIN_SUCCESS:
-      return modifyVacationState(state, action.payload);
+      return modifyProductState(state, action.payload);
     case UPDATE_VILLAIN_ERROR:
       return { ...state, loading: false, error: action.payload };
 
@@ -86,13 +86,13 @@ export const vacationsReducer = (state = initState, action) => {
   }
 };
 
-const modifyVacationState = (vacationState, vacationChanges) => {
+const modifyProductState = (productState, productChanges) => {
   return {
-    ...vacationState,
+    ...productState,
     loading: false,
-    data: vacationState.data.map((h) => {
-      if (h.id === vacationChanges.id) {
-        return { ...h, ...vacationChanges };
+    data: productState.data.map((h) => {
+      if (h.id === productChanges.id) {
+        return { ...h, ...productChanges };
       } else {
         return h;
       }
@@ -100,10 +100,10 @@ const modifyVacationState = (vacationState, vacationChanges) => {
   };
 };
 
-let initialSelectedVacation = null;
+let initialSelectedProduct = null;
 
-export const selectedVacationReducer = (
-  state = initialSelectedVacation,
+export const selectedProductReducer = (
+  state = initialSelectedProduct,
   action
 ) => {
   switch (action.type) {

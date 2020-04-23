@@ -1,68 +1,68 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Vacation } from '../core';
-import { VacationService } from './vacation.service';
+import { Product } from '../core';
+import { ProductService } from './product.service';
 
 @Component({
-  selector: 'app-vacations',
+  selector: 'app-products',
   template: `
     <div class="content-container">
       <app-list-header
-        title="Vacations"
+        title="Products"
         (add)="enableAddMode()"
-        (refresh)="getVacations()"
+        (refresh)="getProducts()"
       ></app-list-header>
       <div class="columns is-multiline is-variable">
-        <div class="column is-8" *ngIf="vacations$ | async as vacations">
-          <app-vacation-list
+        <div class="column is-8" *ngIf="products$ | async as products">
+          <app-product-list
             *ngIf="!selected"
-            [vacations]="vacations"
+            [products]="products"
             (selected)="select($event)"
             (deleted)="askToDelete($event)"
-          ></app-vacation-list>
-          <app-vacation-detail
+          ></app-product-list>
+          <app-product-detail
             *ngIf="selected"
-            [vacation]="selected"
+            [product]="selected"
             (unselect)="clear()"
             (save)="save($event)"
-          ></app-vacation-detail>
+          ></app-product-detail>
         </div>
       </div>
 
       <app-modal
-        class="modal-vacation"
+        class="modal-product"
         [message]="message"
         [isOpen]="showModal"
         (handleNo)="closeModal()"
-        (handleYes)="deleteVacation()"
+        (handleYes)="deleteProduct()"
       ></app-modal>
     </div>
   `,
 })
-export class VacationsComponent implements OnInit {
-  selected: Vacation;
-  vacations$: Observable<Vacation[]>;
+export class ProductsComponent implements OnInit {
+  selected: Product;
+  products$: Observable<Product[]>;
   message = '?';
-  vacationToDelete: Vacation;
+  productToDelete: Product;
   showModal = false;
 
-  constructor(private vacationService: VacationService) {
-    this.vacations$ = vacationService.entities$;
+  constructor(private productService: ProductService) {
+    this.products$ = productService.entities$;
   }
 
   ngOnInit() {
-    this.getVacations();
+    this.getProducts();
   }
 
-  add(vacation: Vacation) {
-    this.vacationService.add(vacation);
+  add(product: Product) {
+    this.productService.add(product);
   }
 
-  askToDelete(vacation: Vacation) {
-    this.vacationToDelete = vacation;
+  askToDelete(product: Product) {
+    this.productToDelete = product;
     this.showModal = true;
-    if (this.vacationToDelete.name) {
-      this.message = `Would you like to delete ${this.vacationToDelete.name}?`;
+    if (this.productToDelete.name) {
+      this.message = `Would you like to delete ${this.productToDelete.name}?`;
     }
   }
 
@@ -74,12 +74,12 @@ export class VacationsComponent implements OnInit {
     this.showModal = false;
   }
 
-  deleteVacation() {
+  deleteProduct() {
     this.closeModal();
-    if (this.vacationToDelete) {
-      this.vacationService
-        .delete(this.vacationToDelete.id)
-        .subscribe(() => (this.vacationToDelete = null));
+    if (this.productToDelete) {
+      this.productService
+        .delete(this.productToDelete.id)
+        .subscribe(() => (this.productToDelete = null));
     }
     this.clear();
   }
@@ -88,24 +88,24 @@ export class VacationsComponent implements OnInit {
     this.selected = <any>{};
   }
 
-  getVacations() {
-    this.vacationService.getAll();
+  getProducts() {
+    this.productService.getAll();
     this.clear();
   }
 
-  save(vacation: Vacation) {
+  save(product: Product) {
     if (this.selected && this.selected.name) {
-      this.update(vacation);
+      this.update(product);
     } else {
-      this.add(vacation);
+      this.add(product);
     }
   }
 
-  select(vacation: Vacation) {
-    this.selected = vacation;
+  select(product: Product) {
+    this.selected = product;
   }
 
-  update(vacation: Vacation) {
-    this.vacationService.update(vacation);
+  update(product: Product) {
+    this.productService.update(product);
   }
 }
