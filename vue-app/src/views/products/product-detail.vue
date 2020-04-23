@@ -51,7 +51,7 @@ export default {
           <input
             class="input"
             name="id"
-            placeholder="e.g. ProductColleen"
+            placeholder="99999"
             readonly
             type="text"
             v-model="editingProduct.id"
@@ -62,7 +62,7 @@ export default {
           <input
             class="input"
             name="name"
-            placeholder="e.g. Colleen"
+            placeholder="Oranges"
             type="text"
             v-model="editingProduct.name"
           />
@@ -72,9 +72,21 @@ export default {
           <input
             class="input"
             name="description"
-            placeholder="dance fight!"
+            placeholder="box"
             type="text"
             v-model="editingProduct.description"
+          />
+        </div>
+        <div class="field">
+          <label class="label" for="quantity">quantity</label>
+          <input
+            class="input"
+            name="quantity"
+            placeholder="1"
+            type="number"
+            min="1"
+            max="100"
+            v-model="editingProduct.quantity"
           />
         </div>
       </div>

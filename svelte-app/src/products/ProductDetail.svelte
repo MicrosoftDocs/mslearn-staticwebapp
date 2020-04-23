@@ -53,7 +53,7 @@
           <input
             class="input"
             name="id"
-            placeholder="e.g. ProductColleen"
+            placeholder="99999"
             readonly
             type="text"
             bind:value={editingProduct.id} />
@@ -64,7 +64,7 @@
         <input
           class="input"
           name="name"
-          placeholder="e.g. Colleen"
+          placeholder="Oranges"
           type="text"
           bind:value={editingProduct.name} />
       </div>
@@ -73,9 +73,20 @@
         <input
           class="input"
           name="description"
-          placeholder="dance fight!"
+          placeholder="box"
           type="text"
           bind:value={editingProduct.description} />
+      </div>
+      <div class="field">
+        <label class="label" for="quantity">quantity</label>
+        <input
+          class="input"
+          name="quantity"
+          placeholder="1"
+          type="number"
+          min="1"
+          max="100"
+          bind:value={editingProduct.quantity} />
       </div>
     </div>
   </div>

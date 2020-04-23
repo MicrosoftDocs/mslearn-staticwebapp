@@ -1,6 +1,6 @@
 # Static Web App
 
-This project was created to help represent a fundamental app written with React. The vacations theme is used throughout the app.
+This project was created to help represent a fundamental app written with React. The shopping theme is used throughout the app.
 
 ## Getting Started
 

@@ -30,6 +30,10 @@ function ProductDetail({
     setProduct({ ...product, description: e.target.value });
   }
 
+  function handleQuantityChange(e) {
+    setProduct({ ...product, quantity: e.target.value });
+  }
+
   return (
     <div className="card edit-detail">
       <header className="card-header">
@@ -46,15 +50,30 @@ function ProductDetail({
           <InputDetail
             name="name"
             value={product.name}
-            placeholder="e.g Colleen"
+            placeholder="Oranges"
             onChange={handleNameChange}
           />
           <InputDetail
             name="description"
             value={product.description}
-            placeholder="e.g dance fight!"
+            placeholder="box"
             onChange={handleDescriptionChange}
           />
+          <div className="field">
+            <label className="label" htmlFor={name}>
+              {name}
+            </label>
+            <input
+              name="quantity"
+              className="input"
+              type="number"
+              min="1"
+              max="100"
+              defaultValue={product.quantity}
+              placeholder="1"
+              onChange={handleQuantityChange}
+            />
+          </div>
         </div>
       </div>
       <footer className="card-footer ">

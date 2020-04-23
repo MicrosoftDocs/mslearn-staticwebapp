@@ -15,7 +15,7 @@ urlFragment: 'https://github.com/MicrosoftDocs/mslearn-staticwebapp'
 
 This repository contains apps that can be used with as a starting point for some MS Learn Modules. because everyone has their own preference for their JavaScript frameworks/library, you can choose which one you prefer.
 
-The vacations theme is used throughout the app.
+The shopping theme is used throughout the app.
 
 ## Contents
 
