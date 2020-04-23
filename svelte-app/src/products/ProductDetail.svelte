@@ -3,27 +3,27 @@
   import { ButtonFooter } from '../components';
 
   const dispatch = createEventDispatcher();
-  export let vacation = {};
+  export let product = {};
   let addMode = false;
-  let editingVacation = { ...vacation };
+  let editingProduct = { ...product };
 
-  onMount(() => watchVacation());
+  onMount(() => watchProduct());
 
   function clear() {
     dispatch('unselect');
   }
 
-  function saveVacation() {
-    dispatch('save', editingVacation);
+  function saveProduct() {
+    dispatch('save', editingProduct);
     clear();
   }
 
-  function watchVacation() {
-    if (vacation && vacation.id) {
-      editingVacation = { ...vacation };
+  function watchProduct() {
+    if (product && product.id) {
+      editingProduct = { ...product };
       addMode = false;
     } else {
-      editingVacation = { id: undefined, name: '', description: '' };
+      editingProduct = { id: undefined, name: '', description: '' };
       addMode = true;
     }
   }
@@ -43,20 +43,20 @@
 
 <div class="card edit-detail">
   <header class="card-header">
-    <p class="card-header-title">{editingVacation.name}</p>
+    <p class="card-header-title">{editingProduct.name}</p>
   </header>
   <div class="card-content">
     <div class="content">
-      {#if editingVacation.id}
+      {#if editingProduct.id}
         <div class="field">
           <label class="label" for="id">id</label>
           <input
             class="input"
             name="id"
-            placeholder="e.g. VacationColleen"
+            placeholder="e.g. ProductColleen"
             readonly
             type="text"
-            bind:value={editingVacation.id} />
+            bind:value={editingProduct.id} />
         </div>
       {/if}
       <div class="field">
@@ -66,7 +66,7 @@
           name="name"
           placeholder="e.g. Colleen"
           type="text"
-          bind:value={editingVacation.name} />
+          bind:value={editingProduct.name} />
       </div>
       <div class="field">
         <label class="label" for="description">description</label>
@@ -75,19 +75,16 @@
           name="description"
           placeholder="dance fight!"
           type="text"
-          bind:value={editingVacation.description} />
+          bind:value={editingProduct.description} />
       </div>
     </div>
   </div>
 
   <footer class="card-footer">
-    <ButtonFooter
-      {...cancelOptions}
-      item={editingVacation}
-      on:clicked={clear} />
+    <ButtonFooter {...cancelOptions} item={editingProduct} on:clicked={clear} />
     <ButtonFooter
       {...saveOptions}
-      item={editingVacation}
-      on:clicked={saveVacation} />
+      item={editingProduct}
+      on:clicked={saveProduct} />
   </footer>
 </div>

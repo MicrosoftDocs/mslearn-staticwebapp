@@ -3,14 +3,14 @@
   import { ButtonFooter, CardContent } from '../components';
 
   const dispatch = createEventDispatcher();
-  export let vacations = [];
+  export let products = [];
 
-  function deleteVacation(vacation) {
-    dispatch('deleted', vacation);
+  function deleteProduct(product) {
+    dispatch('deleted', product);
   }
 
-  function selectVacation(vacation) {
-    dispatch('selected', vacation);
+  function selectProduct(product) {
+    dispatch('selected', product);
   }
 
   const deleteOptions = {
@@ -27,7 +27,7 @@
 </script>
 
 <ul class="list">
-  {#each vacations as { id, name, description }, i (id)}
+  {#each products as { id, name, description }, i (id)}
     <li role="presentation">
       <div class="card">
         <CardContent {name} {description} />
@@ -36,14 +36,14 @@
             {...deleteOptions}
             dataId={id}
             dataIndex={i}
-            item={vacations[i]}
-            on:clicked={deleteVacation(vacations[i])} />
+            item={products[i]}
+            on:clicked={deleteProduct(products[i])} />
           <ButtonFooter
             {...editOptions}
             dataId={id}
             dataIndex={i}
-            item={vacations[i]}
-            on:clicked={selectVacation(vacations[i])} />
+            item={products[i]}
+            on:clicked={selectProduct(products[i])} />
         </footer>
       </div>
     </li>
