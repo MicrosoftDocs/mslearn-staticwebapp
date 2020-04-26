@@ -18,30 +18,6 @@ const data = {
       description: 'Bag of 7 fresh McIntosh apples',
       quantity: 1,
     },
-    {
-      id: 40,
-      name: 'Milk',
-      description: 'Liter of fresh milk',
-      quantity: 1,
-    },
-    {
-      id: 50,
-      name: 'Large eggs',
-      description: '1 large carton of eggs',
-      quantity: 1,
-    },
-    {
-      id: 60,
-      name: 'Lettuce',
-      description: 'Head of fresh romaine lettuce',
-      quantity: 1,
-    },
-    {
-      id: 70,
-      name: 'Green peppers',
-      description: 'Fresh organic green peppers',
-      quantity: 1,
-    },
   ],
 };
 
@@ -59,6 +35,7 @@ const addProduct = (product) => {
 
 const updateProduct = (product) => {
   const index = data.products.findIndex((v) => v.id === product.id);
+  console.log(product);
   data.products.splice(index, 1, product);
   return product;
 };

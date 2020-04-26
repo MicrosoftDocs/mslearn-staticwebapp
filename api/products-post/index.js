@@ -1,5 +1,16 @@
-const productService = require('../services/product.service');
+const data = require('../shared/product-data');
 
 module.exports = async function (context, req) {
-  return await productService.postProduct(context);
+  const product = {
+    id: undefined,
+    name: req.body.name,
+    description: req.body.description,
+  };
+
+  try {
+    const newProduct = data.addProduct(product);
+    context.res.status(201).json(newProduct);
+  } catch (error) {
+    context.res.status(500).send(error);
+  }
 };
