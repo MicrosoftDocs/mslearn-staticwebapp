@@ -6,13 +6,13 @@ This project was created to help represent a fundamental app written with Angula
 
 1. Create a repository from this template repository <https://github.com/MicrosoftDocs/mslearn-staticwebapp/generate>
 
-1. Enter the name of your new repository as _mslearn-staticwebapp_
+1. Enter the name of your new repository as _my-first-static-web-app_
 
 1. Clone your new repository
 
    ```bash
-   git clone https://github.com/your-github-organization/mslearn-staticwebapp
-   cd mslearn-staticwebapp/angular-app
+   git clone https://github.com/your-github-organization/my-first-static-web-app
+   cd my-first-static-web-app/angular-app
    ```
 
 1. Install the npm packages
@@ -35,10 +35,10 @@ This project was created to help represent a fundamental app written with Angula
 
 ## Resources
 
-- [Azure Free Trial](https://azure.microsoft.com/en-us/free/?wt.mc_id=mslearn_staticwebapp-github-jopapa)
+- [Azure Free Trial](https://azure.microsoft.com/free/?wt.mc_id=mslearn_staticwebapp-github-jopapa)
 - [VS Code](https://code.visualstudio.com?wt.mc_id=mslearn_staticwebapp-github-jopapa)
 - [VS Code Extension for Node on Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack&WT.mc_id=mslearn_staticwebapp-github-jopapa)
-- Azure Functions [local.settings.json](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#local-settings-file?WT.mc_id=mslearn_staticwebapp-github-jopapa) file
+- Azure Functions [local.settings.json](https://docs.microsoft.com/azure/azure-functions/functions-run-local#local-settings-file?WT.mc_id=mslearn_staticwebapp-github-jopapa) file
 
 ### Debugging Resources
 
