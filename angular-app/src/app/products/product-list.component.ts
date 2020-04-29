@@ -3,7 +3,7 @@ import {
   EventEmitter,
   Input,
   Output,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
 } from '@angular/core';
 import { Product } from '../core';
 
