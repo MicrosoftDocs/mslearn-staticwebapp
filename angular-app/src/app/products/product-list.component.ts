@@ -3,14 +3,16 @@ import {
   EventEmitter,
   Input,
   Output,
-  ChangeDetectionStrategy,
-  TrackByFunction,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { Product } from '../core';
 
 @Component({
   selector: 'app-product-list',
   template: `
+    <div *ngIf="!products?.length">
+      Loading data ...
+    </div>
     <ul class="list">
       <li
         role="presentation"
@@ -50,14 +52,7 @@ export class ProductListComponent {
   @Output() deleted = new EventEmitter<Product>();
   @Output() selected = new EventEmitter<Product>();
 
-  // byId(product: Product) {
-  //   return product.id;
-  // }
-  foo(product: Product): string {
-    return product.id;
-  }
-
-  trackByProduct(index: number, product: Product): string {
+  trackByProduct(index: number, product: Product): number {
     return product.id;
   }
 
