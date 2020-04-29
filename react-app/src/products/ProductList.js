@@ -26,36 +26,39 @@ function ProductList({
   }
 
   return (
-    <ul className="list">
-      {products.map((product, index) => (
-        <li key={product.id} role="presentation">
-          <div className="card">
-            <CardContent
-              name={product.name}
-              description={product.description}
-            />
-            <footer className="card-footer">
-              <ButtonFooter
-                className="delete-item"
-                iconClasses="fas fa-trash"
-                onClick={deleteProduct}
-                label="Delete"
-                dataIndex={index}
-                dataId={product.id}
+    <div>
+      {products && <div>Loading data ...</div>}
+      <ul className="list">
+        {products.map((product, index) => (
+          <li key={product.id} role="presentation">
+            <div className="card">
+              <CardContent
+                name={product.name}
+                description={product.description}
               />
-              <ButtonFooter
-                className="edit-item"
-                iconClasses="fas fa-edit"
-                onClick={selectProduct}
-                label="Edit"
-                dataIndex={index}
-                dataId={product.id}
-              />
-            </footer>
-          </div>
-        </li>
-      ))}
-    </ul>
+              <footer className="card-footer">
+                <ButtonFooter
+                  className="delete-item"
+                  iconClasses="fas fa-trash"
+                  onClick={deleteProduct}
+                  label="Delete"
+                  dataIndex={index}
+                  dataId={product.id}
+                />
+                <ButtonFooter
+                  className="edit-item"
+                  iconClasses="fas fa-edit"
+                  onClick={selectProduct}
+                  label="Edit"
+                  dataIndex={index}
+                  dataId={product.id}
+                />
+              </footer>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
