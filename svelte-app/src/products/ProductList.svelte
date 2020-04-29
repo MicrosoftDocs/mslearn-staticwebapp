@@ -26,26 +26,29 @@
   };
 </script>
 
-<ul class="list">
-  {#each products as { id, name, description }, i (id)}
-    <li role="presentation">
-      <div class="card">
-        <CardContent {name} {description} />
-        <footer class="card-footer">
-          <ButtonFooter
-            {...deleteOptions}
-            dataId={id}
-            dataIndex={i}
-            item={products[i]}
-            on:clicked={deleteProduct(products[i])} />
-          <ButtonFooter
-            {...editOptions}
-            dataId={id}
-            dataIndex={i}
-            item={products[i]}
-            on:clicked={selectProduct(products[i])} />
-        </footer>
-      </div>
-    </li>
-  {/each}
-</ul>
+<div>
+  <div v-if="!products.length">Loading data ...</div>
+  <ul class="list">
+    {#each products as { id, name, description }, i (id)}
+      <li role="presentation">
+        <div class="card">
+          <CardContent {name} {description} />
+          <footer class="card-footer">
+            <ButtonFooter
+              {...deleteOptions}
+              dataId={id}
+              dataIndex={i}
+              item={products[i]}
+              on:clicked={deleteProduct(products[i])} />
+            <ButtonFooter
+              {...editOptions}
+              dataId={id}
+              dataIndex={i}
+              item={products[i]}
+              on:clicked={selectProduct(products[i])} />
+          </footer>
+        </div>
+      </li>
+    {/each}
+  </ul>
+</div>
