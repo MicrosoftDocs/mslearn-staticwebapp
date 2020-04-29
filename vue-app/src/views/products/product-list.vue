@@ -30,35 +30,44 @@ export default {
 </script>
 
 <template>
-  <ul class="list">
-    <li
-      v-for="(product, index) in products"
-      :key="product.id"
-      role="presentation"
-    >
-      <div class="card">
-        <CardContent :name="product.name" :description="product.description" />
-        <footer class="card-footer">
-          <ButtonFooter
-            class="delete-item"
-            iconClasses="fas fa-trash"
-            @clicked="deleteProduct"
-            label="Delete"
-            :dataIndex="index"
-            :dataId="product.id"
-            :item="product"
+  <div>
+    <div v-if="!products.length">
+      Loading data ...
+    </div>
+
+    <ul class="list">
+      <li
+        v-for="(product, index) in products"
+        :key="product.id"
+        role="presentation"
+      >
+        <div class="card">
+          <CardContent
+            :name="product.name"
+            :description="product.description"
           />
-          <ButtonFooter
-            class="edit-item"
-            iconClasses="fas fa-edit"
-            @clicked="selectProduct"
-            label="Edit"
-            :dataIndex="index"
-            :dataId="product.id"
-            :item="product"
-          />
-        </footer>
-      </div>
-    </li>
-  </ul>
+          <footer class="card-footer">
+            <ButtonFooter
+              class="delete-item"
+              iconClasses="fas fa-trash"
+              @clicked="deleteProduct"
+              label="Delete"
+              :dataIndex="index"
+              :dataId="product.id"
+              :item="product"
+            />
+            <ButtonFooter
+              class="edit-item"
+              iconClasses="fas fa-edit"
+              @clicked="selectProduct"
+              label="Edit"
+              :dataIndex="index"
+              :dataId="product.id"
+              :item="product"
+            />
+          </footer>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
