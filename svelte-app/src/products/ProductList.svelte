@@ -27,7 +27,9 @@
 </script>
 
 <div>
-  <div v-if="!products.length">Loading data ...</div>
+  {#if !products.length}
+    <div>Loading data ...</div>
+  {/if}
   <ul class="list">
     {#each products as { id, name, description }, i (id)}
       <li role="presentation">
