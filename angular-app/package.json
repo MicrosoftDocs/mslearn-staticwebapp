@@ -28,6 +28,7 @@
     "bulma": "^0.8.0",
     "core-js": "^3.6.4",
     "font-awesome": "^4.7.0",
+    "minimist": "^1.2.5",
     "rxjs": "~6.5.4",
     "tslib": "^1.11.0",
     "zone.js": "~0.10.2"
@@ -45,12 +46,11 @@
     "jasmine-core": "^3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "json-server": "^0.16.1",
-    "karma": "^4.4.1",
+    "karma": "^5.0.4",
     "karma-chrome-launcher": "^3.1.0",
     "karma-coverage-istanbul-reporter": "^2.1.1",
     "karma-jasmine": "^3.1.1",
     "karma-jasmine-html-reporter": "^1.5.2",
-    "protractor": "^5.4.3",
     "ts-node": "^8.6.2",
     "tslint": "^6.1.1",
     "typescript": "^3.7.5"
