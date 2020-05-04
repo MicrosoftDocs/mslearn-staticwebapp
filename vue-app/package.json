@@ -6,9 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint",
-    "backend": "json-server --watch db.json --routes routes.json --port 7040",
-    "quick": "concurrently \"npm run backend\" \"npm run serve\""
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
@@ -28,12 +26,10 @@
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.0.3",
-    "concurrently": "^5.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-vue": "^6.2.2",
-    "json-server": "^0.16.1",
     "node-sass": "^4.13.1",
     "prettier": "^2.0.4",
     "sass-loader": "^8.0.2",

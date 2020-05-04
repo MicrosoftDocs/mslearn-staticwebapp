@@ -6,9 +6,7 @@
     "start": "ng serve --proxy-config proxy.conf.json --open",
     "build": "ng build --prod",
     "test": "ng test",
-    "lint": "ng lint",
-    "backend": "json-server --watch db.json --routes routes.json --port 7010",
-    "quick": "concurrently \"npm run backend\" \"npm run start\""
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -42,10 +40,8 @@
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^13.7.4",
     "codelyzer": "^5.1.2",
-    "concurrently": "^5.1.0",
     "jasmine-core": "^3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "json-server": "^0.16.1",
     "karma": "^5.0.4",
     "karma-chrome-launcher": "^3.1.0",
     "karma-coverage-istanbul-reporter": "^2.1.1",
