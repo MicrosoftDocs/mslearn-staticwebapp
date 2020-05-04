@@ -27,7 +27,7 @@ function ProductList({
 
   return (
     <div>
-      {products && <div>Loading data ...</div>}
+      {products.length === 0 && <div>Loading data ...</div>}
       <ul className="list">
         {products.map((product, index) => (
           <li key={product.id} role="presentation">
