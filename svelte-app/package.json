@@ -4,16 +4,10 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --cors --single",
-    "backend": "json-server --watch db.json --routes routes.json --port 7030",
-    "quick": "concurrently \"npm run backend\" \"npm run dev\""
+    "start": "sirv public --cors --single"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
-    "@rollup/plugin-node-resolve": "^7.0.0",
-    "@rollup/plugin-replace": "^2.3.1",
-    "concurrently": "^4.0.1",
-    "json-server": "^0.15.1",
     "node-sass": "^4.13.1",
     "rollup": "^1.20.0",
     "rollup-plugin-livereload": "^1.0.0",
