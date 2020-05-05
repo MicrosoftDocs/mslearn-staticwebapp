@@ -21,12 +21,6 @@ This project was created to help represent a fundamental app written with Svelte
    npm install
    ```
 
-1. Build the app
-
-   ```bash
-   npm run build
-   ```
-
 1. Run the app
 
    ```bash
