@@ -30,7 +30,7 @@ This project was created to help represent a fundamental app written with Svelte
 1. Run the app
 
    ```bash
-   npm run quick
+   npm run dev
    ```
 
 
