@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
       <p class="menu-label">Menu</p>
       <ul class="menu-list">
         <a routerLink="/products" routerLinkActive="router-link-active">
-          <span>Vacatons</span>
+          <span>Products</span>
         </a>
         <a routerLink="/about" routerLinkActive="router-link-active">
           <span>About</span>
