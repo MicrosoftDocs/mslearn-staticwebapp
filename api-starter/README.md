@@ -15,12 +15,6 @@ This project is an Azure Functions app, that responds to GET, POST, PUT, and DEL
    cd mslearn-staticwebapp/api
    ```
 
-1. Install the npm packages
-
-   ```bash
-   npm install
-   ```
-
 1. Create the file `api/local.setting.json` and modify its contents as follows:
 
 ```json
