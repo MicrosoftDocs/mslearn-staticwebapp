@@ -38,6 +38,14 @@ This project is an Azure Functions app, that responds to GET, POST, PUT, and DEL
 }
 ```
 
+> Install the Azure Functions Core Tool globally if you haven't
+>
+> Yarn: `yarn global add azure-functions-core-tools` or
+>
+> npm: `npm i -g azure-functions-core-tools`
+>
+> Learn more:[Azure Function Core Tools on npm](https://www.npmjs.com/package/azure-functions-core-tools)
+
 1. Run the app
 
    ```bash
