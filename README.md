@@ -29,6 +29,14 @@ The apps written in the following JavaScript frameworks/libraries:
 | **svelte-app**  | [Sample Svelte app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/svelte-app)           |
 | **vue-app**     | [Sample Vue app](https://github.com/MicrosoftDocs/mslearn-staticwebapp/blob/master/vue-app)                 |
 
+## Prerequisites
+
+- A GitHub account
+- [Node.js and Git](https://nodejs.org/)
+- [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=mslearn_staticwebapp-github-jopapa) installed
+- The [Azure Functions extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions?WT.mc_id=mslearn_staticwebapp-github-jopapa) installed
+- The [Azure Functions Core Tools](https://docs.microsoft.com/azure/azure-functions/functions-run-local?WT.mc_id=mslearn_staticwebapp-github-jopapa) installed
+
 ## Problems or Suggestions
 
 [Open an issue here](https://github.com/MicrosoftDocs/mslearn-staticwebapp/issues)
