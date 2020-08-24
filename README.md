@@ -15,7 +15,7 @@ Follow the hands-on tutorial to [publish an Angular, React, Svelte, or Vue JavaS
 
 ## Static Web App
 
-This repository contains apps that can be used with as a starting point for some MS Learn Modules. because everyone has their own preference for their JavaScript frameworks/library, you can choose which one you prefer.
+This repository contains apps that can be used with as a starting point for some MS Learn Modules. Because everyone has their own preference for their JavaScript frameworks/library, you can choose which one you prefer.
 
 The shopping theme is used throughout the app.
 
