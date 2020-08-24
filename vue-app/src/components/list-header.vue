@@ -12,9 +12,6 @@ export default {
     },
   },
   methods: {
-    handleAdd() {
-      this.$emit('add');
-    },
     handleRefresh() {
       this.$emit('refresh');
     },
@@ -27,9 +24,6 @@ export default {
     <router-link :to="routePath">
       <h2 class="title">{{ title }}</h2>
     </router-link>
-    <button class="button add-button" @click="handleAdd" aria-label="add">
-      <i class="fas fa-plus" aria-hidden="true"></i>
-    </button>
     <button
       class="button refresh-button"
       @click="handleRefresh"
