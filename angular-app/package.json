@@ -23,6 +23,7 @@
     "@ngrx/entity": "^10.0.0",
     "@ngrx/store": "^10.0.0",
     "@ngrx/store-devtools": "^10.0.0",
+    "angular-in-memory-web-api": "^0.11.0",
     "bulma": "^0.8.0",
     "core-js": "^3.6.4",
     "font-awesome": "^4.7.0",

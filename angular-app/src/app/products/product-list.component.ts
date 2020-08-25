@@ -1,10 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ChangeDetectionStrategy,
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Product } from '../core';
 
 @Component({
@@ -23,24 +17,6 @@ import { Product } from '../core';
             [name]="product.name"
             [description]="product.description"
           ></app-card-content>
-          <footer class="card-footer">
-            <app-button-footer
-              class="card-footer-item"
-              [className]="'delete-item'"
-              [iconClasses]="'fas fa-trash'"
-              (clicked)="deleteProduct($event)"
-              label="Delete"
-              [item]="product"
-            ></app-button-footer>
-            <app-button-footer
-              class="card-footer-item"
-              [className]="'edit-item'"
-              [iconClasses]="'fas fa-edit'"
-              (clicked)="selectProduct($event)"
-              label="Edit"
-              [item]="product"
-            ></app-button-footer>
-          </footer>
         </div>
       </li>
     </ul>
@@ -49,18 +25,8 @@ import { Product } from '../core';
 })
 export class ProductListComponent {
   @Input() products: Product[];
-  @Output() deleted = new EventEmitter<Product>();
-  @Output() selected = new EventEmitter<Product>();
 
   trackByProduct(index: number, product: Product): number {
     return product.id;
-  }
-
-  selectProduct(product: Product) {
-    this.selected.emit(product);
-  }
-
-  deleteProduct(product: Product) {
-    this.deleted.emit(product);
   }
 }
