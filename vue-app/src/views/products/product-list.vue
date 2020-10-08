@@ -11,9 +11,7 @@ export default {
       default: () => [],
     },
   },
-  components: {
-    CardContent,
-  },
+  components: { CardContent },
   methods: {
     selectProduct(product) {
       captains.log(`You tried to select ${product.name}`);

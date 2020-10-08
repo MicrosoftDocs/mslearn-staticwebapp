@@ -13,6 +13,7 @@
     "jsx-a11y/anchor-is-valid": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "no-console": 1,
+    "no-empty-pattern": "off",
     "quotes": [
       2,
       "single",
