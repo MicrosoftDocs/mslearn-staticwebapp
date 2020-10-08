@@ -19,6 +19,13 @@ This repository contains apps that can be used with as a starting point for some
 
 The shopping theme is used throughout the app.
 
+## Pre-Reqs
+
+- Familiarity with one of Angular, React, Svelte, or Vue
+- [Node.js LTS and Git](https://nodejs.org/)
+- [GitHub](https://github.com) account
+- [Visual Studio Code](https://code.visualstudio.com)
+
 ## Contents
 
 The apps written in the following JavaScript frameworks/libraries:
