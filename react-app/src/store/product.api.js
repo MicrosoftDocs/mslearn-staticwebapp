@@ -1,9 +1,3 @@
-import axios from 'axios';
-import { parseItem, parseList } from './action-utils';
-import API from './config';
-
-const captains = console;
-
 const data = {
   products: [
     {

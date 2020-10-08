@@ -3,12 +3,12 @@ import { withRouter } from 'react-router';
 
 import { CardContent } from '../components';
 
-function ProductList({ products }) {
+function ProductList({products}) {
   return (
     <div>
       {products.length === 0 && <div>Loading data ...</div>}
       <ul className="list">
-        {products.map((product, index) => (
+        {products.map((product) => (
           <li key={product.id} role="presentation">
             <div className="card">
               <CardContent
