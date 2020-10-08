@@ -3,7 +3,7 @@ import { withRouter } from 'react-router';
 
 import { CardContent } from '../components';
 
-function ProductList({ products }) {
+function ProductList({products }) {
   return (
     <div>
       {products.length === 0 && <div>Loading data ...</div>}
