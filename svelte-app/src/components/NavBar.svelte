@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Router, Link, Route } from 'svelte-routing';
   import { getContext } from 'svelte';
   import { ROUTER } from 'svelte-routing/src/contexts';

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import './styles.scss';
   import { Router, Link, Route } from 'svelte-routing';
   import About from './About.svelte';

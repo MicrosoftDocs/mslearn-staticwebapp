@@ -1,12 +1,17 @@
+import { Product } from '../models';
 import * as store from './store';
 
-const data = {
+export interface AppData {
+  products: Product[];
+}
+
+const data: AppData = {
   products: [
     {
       id: 10,
       name: 'Strawberries',
       description: '16oz package of fresh organic strawberries',
-      quantity: '1',
+      quantity: 1,
     },
     {
       id: 20,
