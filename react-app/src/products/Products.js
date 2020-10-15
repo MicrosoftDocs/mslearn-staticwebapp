@@ -5,7 +5,7 @@ import { ListHeader } from '../components';
 import ProductList from './ProductList';
 import useProducts from './useProducts';
 
-function Products(a = {}) {
+function Products() {
   const { getProducts, products } = useProducts();
 
   useEffect(() => {
