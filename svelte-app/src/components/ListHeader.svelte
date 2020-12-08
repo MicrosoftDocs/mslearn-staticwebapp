@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { Link } from 'svelte-routing';
   import { createEventDispatcher } from 'svelte';
 

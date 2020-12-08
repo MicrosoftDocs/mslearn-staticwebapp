@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { ListHeader } from '../components';
   import ProductList from './ProductList.svelte';
@@ -25,5 +25,4 @@
       </div>
     {/if}
   </div>
-
 </div>

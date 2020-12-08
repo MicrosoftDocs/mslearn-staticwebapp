@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
   import { CardContent } from '../components';
+  import { Product } from '../models';
 
-  export let products = [];
+  export let products: Product[] = [];
 </script>
 
 <div>
