@@ -24,7 +24,7 @@ export default [
       ]
     },
     "plugins": ["react", "import", "jsx-a11y"],
-    "parser": "react-scripts/node_modules/babel-eslint",
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
       "ecmaVersion": 2018,
       "sourceType": "module",
