@@ -2,7 +2,8 @@
   "name": "angular-app",
   "version": "0.0.0",
   "engines": {
-    "node": ">=12.14.0"
+    "npm" : ">=8.0.0 <9.0.0",
+    "node" : ">=16.0.0 <17.0.0"
   }, 
   "scripts": {
     "ng": "ng",
