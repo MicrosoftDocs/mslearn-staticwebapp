@@ -4,7 +4,9 @@
     "plugin:import/errors",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier"
+    "prettier",
+    "prettier/react",
+    "airbnb"
   ],
   "rules": {
     "react/prop-types": 0,
