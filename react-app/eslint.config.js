@@ -1,0 +1,42 @@
+export default [
+  {
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended",
+      "prettier",
+      "airbnb"
+    ],
+    "rules": {
+      "react/prop-types": 0,
+      "jsx-a11y/label-has-for": 0,
+      "jsx-a11y/anchor-is-valid": 0,
+      "jsx-a11y/click-events-have-key-events": 0,
+      "no-console": 1,
+      "quotes": [
+        2,
+        "single",
+        {
+          "avoidEscape": true,
+          "allowTemplateLiterals": true
+        }
+      ]
+    },
+    "plugins": ["react", "import", "jsx-a11y"],
+    "parser": "react-scripts/node_modules/babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "env": {
+      "es6": true,
+      "browser": true,
+      "node": true
+    }
+  }
+
+]
