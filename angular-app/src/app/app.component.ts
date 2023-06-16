@@ -5,8 +5,19 @@ export class Customer {
 }
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  template: `
+    <div>
+      <app-header-bar></app-header-bar>
+      <div class="section columns">
+        <app-nav class="column is-2"></app-nav>
+        <main class="column">
+          <router-outlet></router-outlet>
+        </main>
+      </div>
+    </div>
+  `,
+
 })
 export class AppComponent {
   customers: Customer[] = [{ id: 1, name: 'john' }];
