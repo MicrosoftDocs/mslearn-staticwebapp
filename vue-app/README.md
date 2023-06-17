@@ -1,6 +1,13 @@
-# Static Web App
+git checkout -# Static Web App
 
 This project was created to help represent a fundamental app written with Vue. The shopping theme is used throughout the app.
+
+## Pre-Reqs
+
+- [Python 2](https://www.python.org/downloads/) - python2 executable must be present on PATH
+- [Node.js LTS and Git](https://nodejs.org/)
+- [GitHub](https://github.com) account
+- [Visual Studio Code](https://code.visualstudio.com)
 
 ## Getting Started
 
@@ -21,14 +28,30 @@ This project was created to help represent a fundamental app written with Vue. T
    npm install
    ```
 
+1. Update browsers list
+
+```bash
+   npx browserslist@latest --update-db
+```
+
+1. Fix any lint errors
+
+```bash
+   npm run lint --fix
+```
+
 1. Run the app
 
    ```bash
    npm run serve
    ```
 
-
 ## Resources
+
+### Python2
+
+[Installing Python 2 on Windows](https://docs.python-guide.org/starting/install/win/)
+[Use Scoop to install both Python2 and Python3 on Windows and switch between them](https://github.com/ScoopInstaller/Scoop/wiki/Switching-Ruby,-Python-and-PHP-Versions#python)
 
 ### Azure Static Web Apps
 
