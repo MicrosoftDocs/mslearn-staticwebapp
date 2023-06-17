@@ -15,7 +15,7 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        trailingComma: 'es5',
+        trailingComma: 'all',
         singleQuote: true,
         printWidth: 80,
       },
@@ -26,6 +26,7 @@ module.exports = {
         ignoreWhenBindingPresent: true,
       },
     ],
+    'vue/multi-word-component-names': 0,
   },
   parserOptions: {
     parser: 'babel-eslint',
