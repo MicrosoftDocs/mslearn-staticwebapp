@@ -53,10 +53,11 @@ export class InMemoryDataService implements InMemoryDbService {
   parseRequestUrl(url: string, utils: RequestInfoUtilities): ParsedRequestUrl {
     const parsed = utils.parseRequestUrl(url);
     console.log('In-memory API intercepting URL:', url, 'Collection:', parsed.collectionName);
-    parsed.collectionName = this.active
+    const mapped = this.active
       ? mapCollectionName(parsed.collectionName)
       : undefined;
-    console.log('Mapped collection name:', parsed.collectionName);
+    (parsed as any).collectionName = mapped;
+    console.log('Mapped collection name:', (parsed as any).collectionName);
     return parsed;
   }
 }
