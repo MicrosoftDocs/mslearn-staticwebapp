@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-nav',
-  template: `
+    selector: 'app-nav',
+    template: `
     <nav class="menu">
       <p class="menu-label">Menu</p>
       <ul class="menu-list">
@@ -15,5 +15,6 @@ import { Component } from '@angular/core';
       </ul>
     </nav>
   `,
+    standalone: false
 })
 export class NavComponent {}

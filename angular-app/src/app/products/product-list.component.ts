@@ -2,8 +2,8 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Product } from '../core';
 
 @Component({
-  selector: 'app-product-list',
-  template: `
+    selector: 'app-product-list',
+    template: `
     <div *ngIf="!products?.length">
       Loading data ...
     </div>
@@ -21,7 +21,8 @@ import { Product } from '../core';
       </li>
     </ul>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ProductListComponent {
   @Input() products: Product[];

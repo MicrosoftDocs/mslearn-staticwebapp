@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-about',
-  template: `
+    selector: 'app-about',
+    template: `
     <div class="content-container">
       <div class="content-title-group not-found">
         <h2 class="title">Product Wish List</h2>
@@ -22,5 +22,6 @@ import { Component } from '@angular/core';
       </div>
     </div>
   `,
+    standalone: false
 })
 export class AboutComponent {}
