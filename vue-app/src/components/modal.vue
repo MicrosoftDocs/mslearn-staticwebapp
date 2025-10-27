@@ -1,6 +1,7 @@
 <script>
 export default {
   name: 'Modal',
+  emits: ['handleNo', 'handleYes'],
   props: {
     message: {
       type: String,

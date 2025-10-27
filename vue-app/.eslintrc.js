@@ -1,34 +1,23 @@
-module.exports = {
+export default {
   root: true,
   env: {
     node: true,
+    browser: true,
+    es2022: true
   },
-  extends: ['@vue/airbnb', 'plugin:vue/essential', '@vue/prettier'],
-  plugins: ['prettier'],
-  // watch this for explaining why some of this is here
-  // https://www.youtube.com/watch?time_continue=239&v=YIvjKId9m2c
+  extends: [
+    'eslint:recommended',
+    '@vue/eslint-config-prettier',
+    'plugin:vue/vue3-essential'
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
+  },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'consistent-return': 0,
-    quotes: [2, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-    'prettier/prettier': [
-      'error',
-      {
-        trailingComma: 'all',
-        singleQuote: true,
-        printWidth: 80,
-      },
-    ],
-    'vue/no-unused-components': [
-      'error',
-      {
-        ignoreWhenBindingPresent: true,
-      },
-    ],
-    'vue/multi-word-component-names': 0,
-  },
-  parserOptions: {
-    parser: 'babel-eslint',
-  },
-};
+    'vue/multi-word-component-names': 'off',
+    'vue/no-reserved-component-names': 'off'
+  }
+}

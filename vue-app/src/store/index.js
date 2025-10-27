@@ -1,15 +1,12 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import productsModule from './modules/products';
+import { createStore } from 'vuex'
+import productsModule from './modules/products'
 
-export * from './modules/mutation-types';
+export * from './modules/mutation-types'
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
-  strict: process.env.NODE_ENV !== 'production',
+export default createStore({
+  strict: import.meta.env.DEV,
   modules: {
-    products: productsModule,
+    products: productsModule
   },
-  state: {},
-});
+  state: {}
+})
