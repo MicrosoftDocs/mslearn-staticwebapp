@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { ListHeader } from '../components';
 import ProductList from './ProductList';
@@ -25,13 +25,12 @@ function Products() {
       />
       <div className="columns is-multiline is-variable">
         <div className="column is-8">
-          <Switch>
+          <Routes>
             <Route
-              exact
-              path="/products"
-              component={() => <ProductList products={products} />}
+              path="/*"
+              element={<ProductList products={products} />}
             />
-          </Switch>
+          </Routes>
         </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ export default {
       href="https://vuejs.org/"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Visit Vue.js website"
     >
       <i class="fab js-logo fa-vuejs fa-2x" aria-hidden="true" />
     </a>

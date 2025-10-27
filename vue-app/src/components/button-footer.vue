@@ -1,6 +1,7 @@
 <script>
 export default {
   name: 'ButtonFooter',
+  emits: ['clicked'],
   props: {
     item: {
       type: Object,

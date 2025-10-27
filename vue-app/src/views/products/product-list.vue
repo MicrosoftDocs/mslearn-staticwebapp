@@ -5,6 +5,7 @@ const captains = console;
 
 export default {
   name: 'ProductList',
+  emits: ['selected'],
   props: {
     products: {
       type: Array,

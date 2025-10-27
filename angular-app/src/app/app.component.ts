@@ -4,9 +4,9 @@ export class Customer {
   public name: string;
 }
 @Component({
-  selector: 'app-root',
-  styleUrls: ['./app.component.scss'],
-  template: `
+    selector: 'app-root',
+    styleUrls: ['./app.component.scss'],
+    template: `
     <div>
       <app-header-bar></app-header-bar>
       <div class="section columns">
@@ -17,7 +17,7 @@ export class Customer {
       </div>
     </div>
   `,
-
+    standalone: false
 })
 export class AppComponent {
   customers: Customer[] = [{ id: 1, name: 'john' }];

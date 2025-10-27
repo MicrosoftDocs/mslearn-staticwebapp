@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 
 import { CardContent } from '../components';
 
@@ -23,4 +22,4 @@ function ProductList({products}) {
   );
 }
 
-export default withRouter(ProductList);
+export default ProductList;

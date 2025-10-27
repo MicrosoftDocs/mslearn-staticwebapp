@@ -2,43 +2,34 @@
   "name": "vue-app",
   "version": "0.1.0",
   "engines": {
-    "npm": ">=8.0.0 <9.0.0",
-    "node": ">=16.0.0 <17.0.0"
+    "npm": ">=10.0.0",
+    "node": ">=18.0.0"
   },
+  "type": "module",
   "private": true,
   "scripts": {
-    "serve": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
-    "build": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
-    "test:e2e": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service test:e2e",
-    "lint": "set NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service lint"
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.34",
-    "@fortawesome/free-solid-svg-icons": "^5.15.2",
-    "@fortawesome/vue-fontawesome": "^2.0.2",
-    "axios": "^0.21.1",
-    "bulma": "^0.9.4",
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11",
-    "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "axios": "^1.7.7",
+    "bulma": "^1.0.2",
+    "vue": "^3.5.12",
+    "vue-router": "^4.4.5",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~5.0.8",
-    "@vue/cli-plugin-eslint": "~5.0.8",
-    "@vue/cli-plugin-router": "~5.0.8",
-    "@vue/cli-plugin-vuex": "~5.0.8",
-    "@vue/cli-service": "~5.0.8",
-    "@vue/eslint-config-airbnb": "^5.3.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.5.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^9.14.1",
-    "prettier": "^2.2.1",
-    "sass": "^1.43.4",
-    "sass-loader": "^13.3.2",
-    "vue-template-compiler": "^2.6.11"
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "eslint": "^9.14.0",
+    "eslint-plugin-vue": "^9.28.0",
+    "prettier": "^3.3.3",
+    "sass": "^1.80.6",
+    "vite": "^7.1.12"
   }
 }

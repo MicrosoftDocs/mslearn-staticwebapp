@@ -1,6 +1,7 @@
 <script>
 export default {
   name: 'ListHeader',
+  emits: ['refresh'],
   props: {
     title: {
       type: String,
@@ -29,7 +30,7 @@ export default {
       @click="handleRefresh"
       aria-label="refresh"
     >
-      <i class="fas fa-sync" aria-hidden="true"></i>
+      <font-awesome-icon icon="sync" aria-hidden="true" />
     </button>
   </div>
 </template>
