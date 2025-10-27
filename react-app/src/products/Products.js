@@ -27,7 +27,7 @@ function Products() {
         <div className="column is-8">
           <Routes>
             <Route
-              path="/"
+              path="/*"
               element={<ProductList products={products} />}
             />
           </Routes>
