@@ -27,8 +27,6 @@
               "includePaths": ["src/styles"]
             },
             "styles": [
-              "node_modules/bulma/css/bulma.min.css",
-              "node_modules/bulma/bulma.sass",
               "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
@@ -77,18 +75,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-app:build"
+            "buildTarget": "angular-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-app:build:production"
+              "buildTarget": "angular-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-app:build"
+            "buildTarget": "angular-app:build"
           }
         },
         "test": {
