@@ -3,6 +3,7 @@
  */
 import { Injectable } from '@angular/core';
 import {
+  InMemoryDbService,
   ParsedRequestUrl,
   RequestInfo,
   RequestInfoUtilities,
@@ -14,7 +15,7 @@ interface Db {
 }
 
 @Injectable()
-export class InMemoryDataService {
+export class InMemoryDataService implements InMemoryDbService {
   /** True if in-mem service is intercepting; all requests pass thru when false. */
   active = true;
 
@@ -23,6 +24,7 @@ export class InMemoryDataService {
 
   /** Create the in-memory database on start or by command */
   createDb(reqInfo?: RequestInfo) {
+    console.log('In-memory API: createDb called');
     this.db = getDbData();
 
     if (reqInfo) {
@@ -36,6 +38,7 @@ export class InMemoryDataService {
 
       this.active = !!body.active;
     }
+    console.log('In-memory API: Database created with collections:', Object.keys(this.db));
     return this.db;
   }
 
@@ -49,9 +52,11 @@ export class InMemoryDataService {
    */
   parseRequestUrl(url: string, utils: RequestInfoUtilities): ParsedRequestUrl {
     const parsed = utils.parseRequestUrl(url);
+    console.log('In-memory API intercepting URL:', url, 'Collection:', parsed.collectionName);
     parsed.collectionName = this.active
       ? mapCollectionName(parsed.collectionName)
       : undefined;
+    console.log('Mapped collection name:', parsed.collectionName);
     return parsed;
   }
 }
@@ -66,6 +71,7 @@ function mapCollectionName(name: string): string {
     ({
       hero: 'heroes',
       villain: 'villains',
+      Product: 'products',
     } as any)[name] || name
   );
 }

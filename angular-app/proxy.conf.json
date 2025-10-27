@@ -1,6 +1,8 @@
 {
-  "/api": {
+  "disabled": {
     "target": "http://localhost:7071",
-    "secure": false
+    "secure": false,
+    "logLevel": "silent",
+    "changeOrigin": true
   }
 }

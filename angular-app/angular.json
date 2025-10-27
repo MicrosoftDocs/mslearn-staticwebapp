@@ -27,8 +27,6 @@
               "includePaths": ["src/styles"]
             },
             "styles": [
-              "node_modules/bulma/css/bulma.min.css",
-              "node_modules/bulma/bulma.sass",
               "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
